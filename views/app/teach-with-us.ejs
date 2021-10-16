@@ -1,6 +1,6 @@
 <%- include('../includes/head.ejs') %>
 
-<link rel="stylesheet" href="/css/course.css">
+<link rel="stylesheet" href="/css/form.css">
 </head>
 
 <body>
@@ -8,6 +8,25 @@
 
   <main>
       <h2>Teach with us form</h2>
+      <form method="POST" action="/user/teach-with-us">
+        <div class="form-control">
+          <label for="userName">Name</label>
+          <input id="userName" type="text" name="userName">
+        </div>
+        <div class="form-control">
+          <label for="userEmail">Email</label>
+          <input id="userEmail" type="email" name="userEmail">
+        </div>
+        <div class="form-control">
+          <label for="userPurpose">Purpose - why do you want to teach?</label>
+          <textarea id="userPurpose" name="userPurpose"></textarea>
+        </div>
+        <div class="form-control">
+          <input type="hidden" name="userId" value="<%=user.id %>">
+          <button type="submit">Signup</button>
+        </div>
+
+      </form>
   </main>
 
 <%- include('../includes/end.ejs') %>

@@ -9,11 +9,20 @@
   <main>
       <h2>Enrolled Courses</h2>
         <% if (courses.length > 0) { %>
-          <div class="container">
+          <div class="grid-container">
               <% for (let course of courses) { %>
-                <div class="course-container">
-                  <h3 class="course_title"><%= course.title %></h3>
-                </div>
+                <% console.log(course) %>
+                <a href="/course-list/<%=course.id %>">
+                  <article class="card course-item" >
+                    <div class="card__image">
+                        <img src="<%= course.image %>" alt="<%= course.title %>">
+                    </div>
+                    <div class="card__content">
+                        <p class="course__title"><%= course.title %></p>
+                    </div>
+                  </article>
+                </a>
+                
               <% } %>
           </div>
       <% } else { %>

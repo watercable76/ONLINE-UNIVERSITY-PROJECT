@@ -104,6 +104,7 @@ exports.getEnrolledCourses = (req, res, next) => {
 };
 
 exports.getTeachWithUs = (req, res, next) => {
+  console.log("Tried to render")
   res.render("app/teach-with-us", {
     path: "/user/teach-with-us",
     pageTitle: "Teach with Us",
