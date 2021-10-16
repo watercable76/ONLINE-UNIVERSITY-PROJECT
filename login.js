@@ -1,4 +1,4 @@
 module.exports = Login = {
-    username: 'dev01',
-    pass: 'loginData'
+  username: "dev01",
+  pass: "loginData",
 };
