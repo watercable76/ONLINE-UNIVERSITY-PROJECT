@@ -3,6 +3,5 @@
 node_modules
 weekly-notes
 
-# ignore login data
-# login.js"sendgrid.env" 
-"sendgrid.env" 
+# ignore environment variables
+nodemon.json

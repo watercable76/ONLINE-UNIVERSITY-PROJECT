@@ -19,11 +19,10 @@ const errorController = require("./controllers/error");
 
 // import Objects/classes
 const User = require("./models/user");
-const Login = require("./login");
 
 const MONGODB_URL =
   process.env.MONGODB_URL ||
-  `mongodb+srv://${Login.username}:${Login.pass}@cluster0.lwwzv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+  `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_DB_URL}/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
 
 const app = express();
 const store = new MongoDBStore({
@@ -51,7 +50,7 @@ app.use(flash());
 
 // adding features to support Heroku development
 const corsOptions = {
-  origin: "https://node-first-app-cse341.herokuapp.com/",
+  origin: `https://${process.env.HEROKU_APP}.herokuapp.com/`,
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
@@ -101,6 +100,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URL, options)
   .then((result) => {
-    app.listen(process.env.PORT || 3000);
+    app.listen(process.env.BACKEND_PORT || 3000);
+    console.log('App listening on 3000')
   })
   .catch((err) => console.log(err));
