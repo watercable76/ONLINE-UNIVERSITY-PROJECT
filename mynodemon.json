@@ -14,6 +14,7 @@
         "SESSION_SECRET":"dynoMiT3MUL3",
         "MAPBOX_TOKEN":"",
         "FROM_EMAIL": "drl@gotwick.com",
-        "MONGO_URI": "mongodb+srv://purpl3c0w:aXRaDxFIZD1ZO8us@cse341-1.bryyd.mongodb.net/shop4?retryWrites=true&w=majority"
+        "MONGO_URI": "mongodb+srv://purpl3c0w:aXRaDxFIZD1ZO8us@cse341-1.bryyd.mongodb.net/shop4?retryWrites=true&w=majority",
+        "PORT": 3039
     }
 }

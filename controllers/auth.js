@@ -16,9 +16,7 @@ const transporter = nodemailer.createTransport(
 );
 
 const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey(
-  "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" || process.env.SENDGRID_API_KEY
-);
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 exports.getLogin = (req, res, next) => {
   let message = req.flash("error");

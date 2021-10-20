@@ -1,4 +1,4 @@
-# Udemy Online Course Notes
+# Online University Course Notes
 
 ### Author: Nicholas Cable, el cablecito
 ### Purpose: Demonstrate mastery of node.js and record insights into the course

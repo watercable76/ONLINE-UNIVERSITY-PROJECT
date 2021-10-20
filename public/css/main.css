@@ -2,11 +2,13 @@
 
 * {
   box-sizing: border-box;
+  max-width: 100vw;
 }
 
 body {
   padding: 0;
   margin: 0;
+  max-width: 100%;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -43,7 +45,7 @@ form {
 .main-header__nav {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
 }
@@ -163,6 +165,7 @@ form {
 }
 
 .card {
+  max-width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
@@ -183,7 +186,7 @@ form {
 }
 
 .card__image img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .card__actions {
@@ -240,7 +243,7 @@ form {
   background: #ffb0b0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 541px) {
   .main-header__nav {
     display: flex;
   }

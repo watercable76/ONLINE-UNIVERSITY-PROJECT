@@ -20,6 +20,8 @@ const errorController = require("./controllers/error");
 // import Objects/classes
 const User = require("./models/user");
 
+const PORT = process.env.PORT || 3039;
+
 const MONGODB_URL =
   process.env.MONGODB_URL ||
   `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_DB_URL}/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
@@ -100,7 +102,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URL, options)
   .then((result) => {
-    app.listen(process.env.BACKEND_PORT || 3000);
-    console.log('App listening on 3000')
+    app.listen(PORT);
+    console.log('App listening on ' + PORT)
   })
   .catch((err) => console.log(err));
