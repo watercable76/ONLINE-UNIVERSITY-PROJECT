@@ -9,11 +9,6 @@
       <li class="main-header__item">
         <a class="<%= path === '/courses' ? 'active' : '' %>" href="/courses">Courses</a>
       </li>
-      <li>
-        <a href="https://heroku.com/deploy">
-            <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
-      </a>
-    </li>
       <!-- TODO: IMPLEMENT ROLE-BASED AUTH -->
       <% if (isAuthenticated) { %>
       <li class="main-header__item">
