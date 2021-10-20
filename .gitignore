@@ -5,7 +5,7 @@ weekly-notes
 
 # ignore environment variables
 nodemon.json
-
+mynodemon.json
 *.code-workspace
 
 .gitignore
