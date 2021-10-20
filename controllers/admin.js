@@ -149,16 +149,14 @@ exports.getProducts = (req, res, next) => {
         });;
 };
 
-exports.postDeleteProduct = (req, res, next) => {
-    const prodId = req.body.productId;
+exports.deleteProduct = (req, res, next) => {
+    const prodId = req.params.productId;
     Product.deleteOne({ _id: prodId, userId: req.user._id })
         .then(() => {
             console.log('DESTROYED PRODUCT');
-            res.redirect('/admin/products');
+            res.status(200).json({ message: 'DESTROYED PRODUCT.' });
         })
         .catch(err => {
-            const error = new Error(err);
-            error.httpStatusCode = 500;
-            return next(error);
+            res.status(500).json({ message: 'Deleting product failed.' });
         });
 };
