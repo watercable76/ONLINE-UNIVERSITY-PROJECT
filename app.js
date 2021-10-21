@@ -19,12 +19,11 @@ const errorController = require("./controllers/error");
 
 // import Objects/classes
 const User = require("./models/user");
-
-const PORT = process.env.PORT || 3039;
+const Login = require("./login");
 
 const MONGODB_URL =
   process.env.MONGODB_URL ||
-  `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_DB_URL}/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
+  `mongodb+srv://${Login.username}:${Login.pass}@cluster0.lwwzv.mongodb.net/teachingSite?retryWrites=true&w=majority`;
 
 const app = express();
 const store = new MongoDBStore({
@@ -52,7 +51,7 @@ app.use(flash());
 
 // adding features to support Heroku development
 const corsOptions = {
-  origin: `https://${process.env.HEROKU_APP}.herokuapp.com/`,
+  origin: "https://node-first-app-cse341.herokuapp.com/",
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
@@ -102,7 +101,6 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URL, options)
   .then((result) => {
-    app.listen(PORT);
-    console.log('App listening on ' + PORT)
+    app.listen(process.env.PORT || 3000);
   })
   .catch((err) => console.log(err));
