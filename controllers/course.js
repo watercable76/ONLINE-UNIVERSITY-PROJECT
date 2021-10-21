@@ -1,41 +1,14 @@
 const Product = require("../models/product");
 const Order = require("../models/order");
+const Course = require("../models/course");
+const InstructorRequest = require("../models/instructor-request");
 
 // TODO: implement database here
 const getCourses = async () => {
-  return [
-    {
-      id: "1",
-      image: "https://dummyimage.com/300",
-      title: "title1",
-      description: "description1",
-      content: "content?1",
-      maxStudents: 10,
-      registeredStudents: ["1"],
-    },
-    {
-      id: "2",
-      image: "https://dummyimage.com/300",
-      title: "title2",
-      description: "description2",
-      content: "content?2",
-      maxStudents: 25,
-      registeredStudents: ["1", "2"],
-    },
-    {
-      id: "3",
-      image: "https://dummyimage.com/300",
-      title: "title3",
-      description: "description3",
-      content: "content?3",
-      maxStudents: 15,
-      registeredStudents: ["1", "2", "3"],
-    },
-  ];
+  return await Course.find();
 };
 
 exports.getIndex = async (req, res, next) => {
-  // TODO: implement database
   getCourses()
     .then((courses) => {
       res.render("app/index", {
@@ -104,17 +77,110 @@ exports.getEnrolledCourses = (req, res, next) => {
 };
 
 exports.getTeachWithUs = (req, res, next) => {
-  console.log("Tried to render")
   res.render("app/teach-with-us", {
     path: "/user/teach-with-us",
     pageTitle: "Teach with Us",
+    user: req.user,
   });
 };
 
-exports.postTeachWithUs = (req, res, next) => {
-  // TODO: WRITE TO DB!
+// TODO: UPDATE ROLE BASED AUTH (+ add rights to admins)
+exports.postTeachWithUs = async (req, res, next) => {
+  try {
+    const newInstructorRequest = new InstructorRequest(req.body);
 
-  console.log(req.body);
+    await newInstructorRequest.save();
+
+    res.redirect("/");
+  } catch (e) {
+    console.log("exports.postTeachWithUs");
+    console.log(e);
+    res.redirect("/");
+  }
+};
+
+exports.getInstructorCourses = async (req, res, next) => {
+  try {
+
+    const courses = await Course.find({ instructorId: req.user.id });
+    
+    res.render("app/instructor-courses", {
+      path: "/instructor/courses",
+      pageTitle: "Your Courses",
+      courses,
+    });
+  } catch (e) {
+    console.log("exports.getInstructorCourses");
+    console.log(e);
+    res.redirect("/");
+  }
+};
+
+exports.getCreateInstructorCourses = async (req, res, next) => {
+  try {
+    const courses = await Course.find({ instructorId: req.user.id });
+
+    res.render("app/create-course", {
+      path: "/instructor/courses/create",
+      pageTitle: "Your Courses",
+      courses,
+    });
+  } catch (e) {
+    console.log("exports.getCreateInstructorCourses");
+    console.log(e);
+    res.redirect("/");
+  }
+};
+
+exports.postCreateInstructorCourse = async (req, res, next) => {
+  try {
+    const newCourse = new Course(req.body);
+
+    await newCourse.save();
+
+    res.redirect("/instructor/courses");
+  } catch (e) {
+    console.log("exports.postCreateInstructorCourse");
+    console.log(e);
+    res.redirect("/");
+  }
+};
+
+exports.getUpdateInstructorCourse = async (req, res, next) => {
+  try {
+    const courseId = req.params.courseId;
+    const course = await Course.findById(courseId);
+
+    console.log(course);
+
+    res.render("app/update-course", {
+      path: "/instructor/courses/update",
+      pageTitle: "Update the Course",
+      course,
+    });
+  } catch (e) {
+    console.log("exports.getUpdateInstructorCourse");
+    console.log(e);
+    res.redirect("/");
+  }
+};
+
+exports.postUpdateInstructorCourse = async (req, res, next) => {
+  try {
+    const updatedCourse = req.body;
+    
+    await Course.findByIdAndUpdate(updatedCourse.id, {
+      $set: {
+        ...updatedCourse,
+      },
+    });
+    
+    res.redirect("/instructor/courses");
+  } catch (e) {
+    console.log("exports.postUpdateInstructorCourse");
+    console.log(e);
+    res.redirect("/");
+  }
 };
 
 exports.getCart = (req, res, next) => {
