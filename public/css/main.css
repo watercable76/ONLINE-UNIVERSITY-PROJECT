@@ -186,7 +186,7 @@ form {
 }
 
 .card__image img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .card__actions {
@@ -243,7 +243,7 @@ form {
   background: #ffb0b0;
 }
 
-@media (min-width: 541px) {
+@media (min-width: 701px) {
   .main-header__nav {
     display: flex;
   }
