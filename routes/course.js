@@ -20,7 +20,15 @@ routes.get("/user/teach-with-us", isAuth, courses.getTeachWithUs);
 
 routes.post("/user/teach-with-us", isAuth, courses.postTeachWithUs);
 
-// TODO:
+routes.get("/instructor/courses", isAuth, courses.getInstructorCourses);
+
+routes.get("/instructor/courses/create", isAuth, courses.getCreateInstructorCourses);
+
+routes.post("/instructor/courses/create", isAuth, courses.postCreateInstructorCourse);
+
+routes.get("/instructor/courses/update/:courseId", isAuth, courses.getUpdateInstructorCourse);
+
+routes.post("/instructor/courses/update", isAuth, courses.postUpdateInstructorCourse);
 
 routes.post("/cart-delete-item", isAuth, courses.postCartDeleteProduct);
 
