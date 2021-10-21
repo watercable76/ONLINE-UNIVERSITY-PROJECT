@@ -33,18 +33,6 @@ exports.getLogin = (req, res, next) => {
   });
 };
 
-exports.getSignup = (req, res, next) => {
-  let message = req.flash("error");
-  message = message.length > 0 ? message[0] : null;
-  res.render("auth/signup", {
-    path: "/signup",
-    pageTitle: "Signup",
-    errorMessage: message,
-    oldInput: { email: "", password: "", confirmPassword: "" },
-    validationErrors: [],
-  });
-};
-
 exports.postLogin = (req, res, next) => {
   let message = req.flash("error");
   message = message.length > 0 ? message[0] : null;
@@ -105,6 +93,18 @@ exports.postLogin = (req, res, next) => {
     });
 };
 
+exports.getSignup = (req, res, next) => {
+  let message = req.flash("error");
+  message = message.length > 0 ? message[0] : null;
+  res.render("auth/signup", {
+    path: "/signup",
+    pageTitle: "Signup",
+    errorMessage: message,
+    oldInput: { email: "", password: "", confirmPassword: "" },
+    validationErrors: [],
+  });
+};
+
 exports.postSignup = (req, res, next) => {
   let message = req.flash("error");
   message = message.length > 0 ? message[0] : null;
@@ -128,6 +128,8 @@ exports.postSignup = (req, res, next) => {
       const user = new User({
         email: email,
         password: hashedPassword,
+        role: "Student",
+        enrolledCourses: { courses: [] },
         cart: { items: [] },
       });
       return user.save();
