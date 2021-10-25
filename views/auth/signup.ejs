@@ -14,7 +14,7 @@
                     <% } %>
                     <form class="login-form" action="/signup" method="POST">
                             <fieldset class="form-control">
-                            <legend>Sign Up</legend>
+                            <legend class="form-control">Sign Up</legend>
                                 <label for="email">E-Mail</label>
                                 <input class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
                                     type="email" name="email" id="email" value=<%=oldInput.email %>>
