@@ -80,70 +80,72 @@ form {
   color: #ffeb3b;
 }
 
-.mobile-nav {
-  width: 30rem;
-  height: 100vh;
-  max-width: 90%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background: white;
-  z-index: 10;
-  padding: 2rem 1rem 1rem 2rem;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-out;
-}
+@media (max-width: 540px) {
+  .mobile-nav {
+    width: 30rem;
+    height: 100vh;
+    max-width: 90%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: white;
+    z-index: 10;
+    padding: 2rem 1rem 1rem 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+  }
 
-.mobile-nav.open {
-  transform: translateX(0);
-}
+  .mobile-nav.open {
+    transform: translateX(0);
+  }
 
-.mobile-nav__item-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
+  .mobile-nav__item-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
 
-.mobile-nav__item {
-  margin: 1rem;
-  padding: 0;
-}
+  .mobile-nav__item {
+    margin: 1rem;
+    padding: 0;
+  }
 
-.mobile-nav__item a {
-  text-decoration: none;
-  color: black;
-  font-size: 1.5rem;
-  padding: 0.5rem 2rem;
-}
+  .mobile-nav__item a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+  }
 
-.mobile-nav__item a:active,
-.mobile-nav__item a:hover,
-.mobile-nav__item a.active {
-  background: #00695c;
-  color: white;
-  border-radius: 3px;
-}
+  .mobile-nav__item a:active,
+  .mobile-nav__item a:hover,
+  .mobile-nav__item a.active {
+    background: #00695c;
+    color: white;
+    border-radius: 3px;
+  }
 
-#side-menu-toggle {
-  border: 1px solid white;
-  font: inherit;
-  padding: 0.5rem;
-  display: block;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-}
+  #side-menu-toggle {
+    border: 1px solid white;
+    font: inherit;
+    padding: 0.5rem;
+    display: block;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+  }
 
-#side-menu-toggle:focus {
-  outline: none;
-}
+  #side-menu-toggle:focus {
+    outline: none;
+  }
 
-#side-menu-toggle:active,
-#side-menu-toggle:hover {
-  color: #ffeb3b;
-  border-color: #ffeb3b;
+  #side-menu-toggle:active,
+  #side-menu-toggle:hover {
+    color: #ffeb3b;
+    border-color: #ffeb3b;
+  }
 }
 
 .backdrop {
@@ -248,7 +250,7 @@ form {
     display: flex;
   }
 
-  #side-menu-toggle {
+  #side-menu-toggle, .mobile-nav {
     display: none;
   }
 

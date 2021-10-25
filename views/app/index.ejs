@@ -14,15 +14,13 @@
           <div class="container">
               <% for (let course of courses) { %>
                 <div class="course-container">
-                  <article class="card course-item" >
                     <div class="card__image">
-                        <img src="<%= course.image %>" alt="<%= course.title %>">
+                      <img src="<%= course.image %>" alt="<%= course.title %>">
                     </div>
                     <div class="card__content">
+                        <h3 class="course__description"><%= course.description %></h3>
                         <p class="course__title"><%= course.title %></p>
                     </div>
-                  </article>
-                  <h3 class="course__description"><%= course.description %></h3>
                 </div>
               <% } %>
           </div>
