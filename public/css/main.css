@@ -1,15 +1,111 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&family=Nunito:wght@300&family=Righteous&family=Yanone+Kaffeesatz:wght@200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Nunito:wght@300&family=Righteous&display=swap");
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Dosis", sans-serif;
+  color: #0033cd;
+}
+
+.form-control {
+  margin: 0 4vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  color: #0033cd;
+}
+
+legend.form-control {
+  margin-bottom: 5vw;
+  color: #0033cd;
+  border-radius: 10px;
+  border: 2px solid #0033cd;
+  padding: 1vw;
+  background: #fff2cd;
+  font-family: "Dosis", sans-serif;
+}
+
+fieldset.form-control {
+  border-radius: 10px;
+}
+
+form {
+  max-width: 80%;
+  margin: auto;
+}
+
+fieldset.form-control,
+div.form-control {
+  background: #cd9900;
+  color: #fff2cd;
+  width: 100%;
+  margin: auto;
+}
+
+button.btn {
+  background: #0033cd;
+  color: #fff2cd;
+  font-family: "Dosis", sans-serif;
+  width: 50%;
+  border: 2px solid #fff2cd;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 5vw;
+  -webkit-box-shadow: rgba(0, 205, 205, 0.26);
+          box-shadow: rgba(0, 205, 205, 0.26);
+}
+
+button.btn:active, button.btn:hover {
+  background: #fff2cd;
+  color: #0033cd;
+  border: 2px solid #0033cd;
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.form-control label {
+  margin: 0 2vw;
+}
+
+.form-control input,
+.form-control textarea {
+  background: #fff2cd;
+  border: 2px solid #0033cd;
+  font: inherit;
+  border-radius: 10px;
+  margin-bottom: 5vw;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  background: #ffc61a;
+  border: 3px solid #0033cd;
+  color: #fff2cd;
+}
+
+.form-control input.invalid,
+.form-control textarea.invalid {
+  border-color: #cd0000;
+  background: #ff6767;
+}
 
 * {
-  box-sizing: border-box;
-  max-width: 100vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   padding: 0;
   margin: 0;
-  max-width: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  background: #fff2cd;
 }
 
 main {
@@ -21,12 +117,12 @@ form {
   display: inline;
 }
 
-.centered {
+.center {
   text-align: center;
 }
 
 .image {
-  height: 20rem;
+  height: 10vw;
 }
 
 .image img {
@@ -36,24 +132,36 @@ form {
 .main-header {
   width: 100%;
   height: 3.5rem;
-  background-color: #00695c;
+  background: #0033cd;
   padding: 0 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff2cd;
+  font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
 .main-header__nav {
   height: 100%;
   width: 100%;
   display: none;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .main-header__item-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -68,16 +176,16 @@ form {
   background: transparent;
   border: none;
   text-decoration: none;
-  color: white;
+  color: #fff2cd;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .main-header__item a:hover,
 .main-header__item a:active,
-.main-header__item a.active,
 .main-header__item button:hover,
 .main-header__item button:active {
-  color: #ffeb3b;
+  color: #cd0099;
 }
 
 .mobile-nav {
@@ -87,52 +195,71 @@ form {
   position: fixed;
   left: 0;
   top: 0;
-  background: white;
+  background: #0033cd;
   z-index: 10;
   padding: 2rem 1rem 1rem 2rem;
-  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
 .mobile-nav.open {
-  transform: translateX(0);
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .mobile-nav__item-list {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 0;
   padding: 0;
 }
 
 .mobile-nav__item {
-  margin: 1rem;
+  margin: 1vw;
   padding: 0;
 }
 
-.mobile-nav__item a {
+.mobile-nav__item a,
+.mobile-nav__item button {
+  font: inherit;
   text-decoration: none;
-  color: black;
-  font-size: 1.5rem;
-  padding: 0.5rem 2rem;
+  color: #ffe6f9;
+  font-size: 5vw;
+  padding: 0.5vw 2vw;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .mobile-nav__item a:active,
 .mobile-nav__item a:hover,
-.mobile-nav__item a.active {
-  background: #00695c;
-  color: white;
-  border-radius: 3px;
+.mobile-nav__item a.active,
+.mobile-nav__item button:hover,
+.mobile-nav__item button:active {
+  background: #0033cd;
+  color: #fff2cd;
+  border-radius: 10px;
 }
 
 #side-menu-toggle {
-  border: 1px solid white;
+  border: 2px solid #fff2cd;
+  border-radius: 10px;
   font: inherit;
   padding: 0.5rem;
   display: block;
   background: transparent;
-  color: white;
+  color: #fff2cd;
   cursor: pointer;
 }
 
@@ -158,15 +285,21 @@ form {
 }
 
 .grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .card {
-  max-width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
 .card__header,
@@ -183,10 +316,13 @@ form {
 
 .card__image {
   width: 100%;
+  height: 10rem;
+  text-align: center;
 }
 
 .card__image img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .card__actions {
@@ -204,28 +340,28 @@ form {
   padding: 0.25rem 1rem;
   text-decoration: none;
   font: inherit;
-  border: 1px solid #00695c;
-  color: #00695c;
-  background: white;
+  border: 1px solid #cd0099;
+  color: #0033cd;
+  background: #0033cd;
   border-radius: 3px;
   cursor: pointer;
 }
 
 .btn:hover,
 .btn:active {
-  background-color: #00695c;
-  color: white;
+  background: #00cdcd;
+  color: #0033cd;
 }
 
 .btn.danger {
-  color: red;
-  border-color: red;
+  color: #cd0000;
+  border-color: #cd0000;
 }
 
 .btn.danger:hover,
 .btn.danger:active {
-  background: red;
-  color: white;
+  background: #cd0000;
+  color: #0033cd;
 }
 
 .user-message {
@@ -234,25 +370,33 @@ form {
   border: 1px solid #4771fa;
   padding: 0.5rem;
   border-radius: 3px;
-  background-color: #b9c9ff;
+  background: #b9c9ff;
   text-align: center;
 }
 
 .user-message--error {
-  border-color: red;
+  border-color: #cd0000;
   background: #ffb0b0;
+  color: #cd0000;
 }
 
-@media (min-width: 701px) {
-  .main-header__nav {
-    display: flex;
-  }
-
-  #side-menu-toggle {
-    display: none;
-  }
-
-  .user-message {
-    width: 30rem;
-  }
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
 }
+
+.pagination a {
+  text-decoration: none;
+  color: #0033cd;
+  padding: 0.5rem;
+  border: 1px solid #cd0099;
+  margin: 0 1rem;
+}
+
+.pagination a:hover,
+.pagination a:active,
+.pagination a.active {
+  background: #0033cd;
+  color: #0033cd;
+}
+/*# sourceMappingURL=main.css.map */

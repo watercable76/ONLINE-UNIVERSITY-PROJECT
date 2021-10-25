@@ -5,6 +5,8 @@ node_modules
 nodemon.json
 mynodemon.json
 
+*.css.map
+
 *.code-workspace*
 
 .gitignore

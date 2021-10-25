@@ -1,0 +1,88 @@
+@import "variables";
+
+.form-control {
+  margin: 0 4vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  color: $primary;
+}
+
+legend.form-control {
+    margin-bottom: $heightlg;
+    color: $primary;
+    border-radius: $radius;
+    border: $border;
+    padding: 1vw;
+    background: $accent;
+    font-family: $headingfont;
+
+}
+
+fieldset.form-control {
+  border-radius: $radius;
+}
+
+form {
+    max-width: 80%;
+    margin: auto;
+}
+
+fieldset.form-control,
+div.form-control {
+    background: $a225;
+    color: $accent;
+    width: 100%;
+    margin: auto;
+}
+
+button.btn {
+    background: $primary;
+    color: $accent;
+    font-family: $headingfont;
+    width: 50%;
+    border: $buttonborder;
+    border-radius: $radius;
+    margin: auto;
+    margin-top: 5vw;
+    box-shadow: $boxshadow;
+}
+
+button.btn:active, button.btn:hover {
+  background: $accent;
+  color: $primary;
+  border: $border;
+
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+    align-items: center;
+    width: 100%;
+}
+
+.form-control label {
+    margin: 0 2vw;
+}
+
+.form-control input,
+.form-control textarea {
+  background: $accent;
+  border: $border;
+  font: inherit;
+  border-radius: $radius;
+  margin-bottom: 5vw;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  background: lighten($a225, 15%);
+  border: $borderfocus;
+  color: $accent;
+}
+
+.form-control input.invalid,
+.form-control textarea.invalid {
+  border-color: $a180;
+  background: lighten($a180, 30%);
+}
