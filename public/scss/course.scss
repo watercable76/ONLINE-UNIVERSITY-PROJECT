@@ -1,0 +1,49 @@
+@import "variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.course-container {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.1rem solid $boxshadow;
+}
+.course-container img {
+  min-height: auto;
+  max-height: 400px;
+}
+.course-container * {
+  margin-right: 1rem;
+}
+.button-signup {
+  background-color: $accent;
+  color: $primary;
+  border-radius: $radius;
+  border: $accent2;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.grid-container a p {
+  color: $a225;
+  background-color: transparent;
+  text-decoration: none;
+}
+.grid-container a article {
+  margin: 1rem;
+}
+.grid-container a img {
+  min-height: auto;
+  max-height: 300px;
+}

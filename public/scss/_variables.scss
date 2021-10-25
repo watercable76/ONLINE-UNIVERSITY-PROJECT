@@ -1,0 +1,35 @@
+$primary2: darken(adjust-hue(blue, 45deg), 15%);
+$a90: lighten(#008080, 15%);
+$primary2: adjust-hue($a90, 90deg);
+$primary: adjust-hue($a90, 45deg);
+$a45: adjust-hue($a90, 45deg);
+$a135: adjust-hue($a90, 135deg);
+$a180: adjust-hue($a90, 180deg);
+$a225: adjust-hue($a90, 225deg);
+$a270: adjust-hue($a90, 270deg);
+$accent: lighten($a225, 50%);
+$accent2: lighten($a135, 55%);
+$boxshadow: rgba($a90, 0.26);
+$dkgrey: #3a3a3a;
+$mdgrey: #686868;
+$ltgrey: #bababa;
+$warning: $a180;
+$valid: $a270;
+$heightmob: max(12vw);
+$heightlg: max(5vw);
+$boxside: 8vw;
+$radius: 10px;
+$border: 2px solid $primary;
+$borderfocus: 3px solid $a45;
+
+$headerfont: 'Yanone Kaffeesatz', sans-serif;
+$textfont: "Nunito", sans-serif;
+$headingfont: "Dosis", sans-serif;
+
+
+$buttonborder: 2px solid $accent;
+$fontsize: max(2vw);
+$fontsizelg: max(3vw);
+$fontsizelgr: max(5vw);
+$height: 10vh;
+$shortline: max(1vw);

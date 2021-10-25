@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&family=Nunito:wght@300&family=Righteous&family=Yanone+Kaffeesatz:wght@200;300;400;500&display=swap");
+.colorbox {
+  color: #fff2cd;
+  width: 8vw;
+  height: 8vw;
+  padding: 1vw;
+}
+
+.contain {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2vw;
+}
+
+.primary {
+  background: #0033cd;
+}
+
+.a45 {
+  background: #0033cd;
+  color: #fff2cd;
+}
+
+.a90 {
+  background: #00cdcd;
+  color: #fff2cd;
+}
+
+.a135 {
+  background: #cd0099;
+  color: #fff2cd;
+}
+
+.a180 {
+  background: #cd0000;
+}
+
+.a225 {
+  background: #cd9900;
+}
+
+.a270 {
+  background: #66cd00;
+  color: #ffe6f9;
+}
+
+.accent {
+  background: #fff2cd;
+  color: #00cdcd;
+}
+
+.accent2 {
+  background: #ffe6f9;
+  color: #0033cd;
+}
+
+.boxshadow {
+  background: rgba(0, 205, 205, 0.26);
+  color: black;
+}
+/*# sourceMappingURL=test.css.map */

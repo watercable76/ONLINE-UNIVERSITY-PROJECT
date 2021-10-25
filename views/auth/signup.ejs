@@ -12,8 +12,9 @@
                         <%= errorMessage %>
                     </div>
                     <% } %>
-                        <form class="login-form" action="/signup" method="POST">
-                            <div class="form-control">
+                    <form class="login-form" action="/signup" method="POST">
+                            <fieldset class="form-control">
+                            <legend class="form-control">Sign Up</legend>
                                 <label for="email">E-Mail</label>
                                 <input class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
                                     type="email" name="email" id="email" value=<%=oldInput.email %>>
@@ -31,6 +32,7 @@
                             <input class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
                                 type="hidden" name="_csrf" value="<%= csrfToken %>">
                             <button class="btn" type="submit">Signup</button>
-                        </form>
+                        </fieldset>
+                    </form>
             </main>
             <%- include('../includes/end.ejs') %>
