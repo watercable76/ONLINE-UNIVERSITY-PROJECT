@@ -119,10 +119,10 @@ exports.getInstructorCourses = async (req, res, next) => {
 exports.getCreateInstructorCourses = async (req, res, next) => {
   try {
     const courses = await Course.find({ instructorId: req.user.id });
-
+    console.log("Created course", courses);
     res.render("app/create-course", {
       path: "/instructor/courses/create",
-      pageTitle: "Your Courses",
+      pageTitle: "Create Course",
       courses,
     });
   } catch (e) {

@@ -83,6 +83,9 @@ app.use((req, res, next) => {
 // set the authentication and csrf token to prevent malware and ensure credentials are met
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.session.isLoggedIn;
+  // IMPORTANT: Replace this with notification of user being a teacher
+  res.locals.isTeacher = req.session.isLoggedIn;
+  // END
   res.locals.csrfToken = req.csrfToken();
   next();
 });
