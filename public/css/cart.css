@@ -18,8 +18,8 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1rem;
-  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  -webkit-box-shadow: 0 2px 8px rgba(0, 51, 205, 0.26);
+          box-shadow: 0 2px 8px rgba(0, 51, 205, 0.26);
   margin-bottom: 1rem;
 }
 

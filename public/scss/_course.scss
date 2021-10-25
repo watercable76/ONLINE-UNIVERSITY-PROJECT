@@ -7,6 +7,7 @@
   margin-right: auto;
   margin-left: auto;
 }
+
 .course-container {
   display: flex;
   flex-direction: row;
@@ -15,18 +16,21 @@
   justify-content: space-between;
   border: 0.1rem solid $boxshadow;
 }
+
 .course-container img {
   min-height: auto;
   max-height: 400px;
 }
+
 .course-container * {
   margin-right: 1rem;
 }
+
 .button-signup {
   background-color: $accent;
   color: $primary;
   border-radius: $radius;
-  border: $accent2;
+  border: $accent;
 }
 
 .grid-container {
@@ -35,14 +39,17 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .grid-container a p {
-  color: $a225;
+  color: $a180;
   background-color: transparent;
   text-decoration: none;
 }
+
 .grid-container a article {
   margin: 1rem;
 }
+
 .grid-container a img {
   min-height: auto;
   max-height: 300px;

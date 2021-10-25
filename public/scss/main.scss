@@ -1,8 +1,12 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&family=Nunito:wght@300&family=Righteous&family=Yanone+Kaffeesatz:wght@200;300;400;500&display=swap');
 @import "variables";
 @import "fonts";
+@import "large";
 @import "forms";
+@import "course";
+@import "cart";
+@import "orders";
+
+
 * {
   box-sizing: border-box;
 }
@@ -10,7 +14,6 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: $textfont;
   font-weight: bold;
   background: $accent;
 }
@@ -24,7 +27,7 @@ form {
   display: inline;
 }
 
-.center {
+.centered {
   text-align: center;
 }
 
@@ -42,9 +45,8 @@ form {
   background: $primary;
   padding: 0 1.5rem;
   display: flex;
-  align-items: center;
+  justify-items: left;
   color: $accent;
-  font-family: $headerfont;
 }
 
 .main-header__nav {
@@ -83,7 +85,8 @@ form {
 .main-header__item a:active,
 .main-header__item button:hover,
 .main-header__item button:active {
-  color: $a135;
+  color: $accent;
+  background: $a180;
 }
 
 .mobile-nav {
@@ -98,7 +101,6 @@ form {
   padding: 2rem 1rem 1rem 2rem;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
-  font-family: $headerfont;
 }
 
 .mobile-nav.open {
@@ -123,7 +125,6 @@ form {
   font: inherit;
   text-decoration: none;
   color: $accent2;
-  font-size: $fontsizelgr;
   padding: 0.5vw 2vw;
   background: transparent;
   border: none;
@@ -141,10 +142,10 @@ form {
 }
 
 #side-menu-toggle {
+  align-content: flex-start;
   border: 2px solid $accent;
   border-radius: $radius;
   font: inherit;
-  padding: 0.5rem;
   display: block;
   background: transparent;
   color: $accent;
@@ -157,8 +158,8 @@ form {
 
 #side-menu-toggle:active,
 #side-menu-toggle:hover {
-  color: #ffeb3b;
-  border-color: #ffeb3b;
+  color: $accent;
+  border-color: $accent;
 }
 
 .backdrop {
@@ -180,7 +181,7 @@ form {
 }
 
 .card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 8px $boxshadow;
 }
 
 .card__header,
@@ -248,10 +249,10 @@ form {
 .user-message {
   margin: auto;
   width: 90%;
-  border: 1px solid #4771fa;
+  border: $border;
   padding: 0.5rem;
   border-radius: 3px;
-  background: #b9c9ff;
+  background: $accent2;
   text-align: center;
 }
 

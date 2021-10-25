@@ -28,7 +28,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 0.1rem solid rgba(0, 205, 205, 0.26);
+  border: 0.1rem solid rgba(0, 51, 205, 0.26);
 }
 
 .course-container img {
@@ -44,7 +44,7 @@
   background-color: #fff2cd;
   color: #0033cd;
   border-radius: 10px;
-  border: #ffe6f9;
+  border: #fff2cd;
 }
 
 .grid-container {

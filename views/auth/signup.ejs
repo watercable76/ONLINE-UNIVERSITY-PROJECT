@@ -7,32 +7,35 @@
         <%- include('../includes/navigation.ejs') %>
 
             <main>
-                <% if (errorMessage) { %>
-                    <div class="user-message user-message--error">
-                        <%= errorMessage %>
-                    </div>
+                <form class="form-control" action="/signup" method="POST">
+                    <fieldset class="form-control">
+                    <legend class="form-control">Student Sign Up</legend>
+                    <% if (errorMessage) { %>
+                        <div class="user-message user-message--error">
+                            <%= errorMessage %>
+                        </div>
                     <% } %>
-                    <form class="login-form" action="/signup" method="POST">
-                            <fieldset class="form-control">
-                            <legend class="form-control">Sign Up</legend>
-                                <label for="email">E-Mail</label>
-                                <input class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
-                                    type="email" name="email" id="email" value=<%=oldInput.email %>>
-                            </div>
-                            <div class="form-control">
-                                <label for="password">Password</label>
-                                <input class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
-                                    type="password" name="password" id="password" value=<%=oldInput.password %>>
-                            </div>
-                            <div class="form-control">
-                                <label for="confirmPassword">Confirm Password</label>
-                                <input type="password" name="confirmPassword" id="confirmPassword"
-                                    value=<%=oldInput.confirmPassword %>>
-                            </div>
-                            <input class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
-                                type="hidden" name="_csrf" value="<%= csrfToken %>">
-                            <button class="btn" type="submit">Signup</button>
-                        </fieldset>
-                    </form>
+                    <div class="form-control">
+                        <label for="email">E-Mail</label>
+                        <input class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
+                            type="email" name="email" id="email" value=<%=oldInput.email %>>
+                    </div>
+                    <div class="form-control">
+                        <label for="password">Password</label>
+                        <input class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
+                            type="password" name="password" id="password" value=<%=oldInput.password %>>
+                    </div>
+                    <div class="form-control">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" name="confirmPassword" id="confirmPassword"
+                            value=<%=oldInput.confirmPassword %>>
+                    </div>
+                    <div class="form-control">
+                        <input class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
+                            type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button class="btn" type="submit">Let Me Learn</button>
+                    </div>
+                    </fieldset>
+                </form>
             </main>
             <%- include('../includes/end.ejs') %>

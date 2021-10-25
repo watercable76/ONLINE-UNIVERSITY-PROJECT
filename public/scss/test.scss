@@ -2,6 +2,33 @@
 
 @import "variables";
 
+@function light-dark($color) {
+  @if (lightness($color)>45) {
+    @return $primary;
+    } @else {
+      @if ($color == $boxshadow) {
+        @return $primary;
+      } @else {
+        @return $accent;
+    }
+  }
+}
+
+@mixin font-color($entry) {
+  $background: $entry;
+  $color: light-dark($entry);
+  background: $background;
+  color: $color;
+  &::before {
+    content: "Background: #{$background} - ";
+  }
+  &::after {
+    content: " - Font: #{$color}";
+  }
+}
+
+
+
 
 .colorbox {
     color: $accent;
@@ -11,54 +38,60 @@
   }
 
   .contain {
+    font-size: 1.2vw;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(8, 1fr);
     gap: 2vw;
+    width: 100%;
+    font-weight: bold;
+    font-family: $textfont;
   }
 
   .primary {
-    background: $primary;
+    @include font-color($primary);
   }
 
   .a45 {
-    background: $a45;
-    color: $accent;
+    @include font-color($a45);
   }
 
   .a90 {
-    background: $a90;
-    color: $accent;
+    @include font-color($a90);
   }
 
   .a135 {
-    background: $a135;
-    color: $accent;
+    @include font-color($a135);
   }
 
   .a180 {
-    background: $a180;
+    @include font-color($a180);
   }
 
   .a225 {
-    background: $a225;
+    @include font-color($a225);
   }
 
   .a270 {
-    background: $a270;
-    color: $accent2;
+    @include font-color($a270);
+  }
+
+  .a315 {
+    @include font-color($a315);
   }
 
   .accent {
-    background: $accent;
-    color: $a90;
+    @include font-color($accent);
   }
 
   .accent2 {
-    background: $accent2;
-    color: $primary;
+    @include font-color($accent2);
   }
 
   .boxshadow {
-    background: $boxshadow;
-    color: black;
+    @include font-color($boxshadow);
   }
+
+/* Med/large screens */
+@media only screen and (min-width: 30rem) {
+
+}
