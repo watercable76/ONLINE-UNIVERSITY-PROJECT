@@ -1,5 +1,4 @@
 <%- include('../includes/head.ejs') %>
-<link rel="stylesheet" href="/public/css/course.css">
 </head>
 
 <body>
@@ -10,16 +9,16 @@
     <% if (courses.length > 0) { %>
       <div class="container">
           <% for (let course of courses) { %>
-            <div class="course-container">
-              <article class="card course-item" >
-                <div class="card__image">
+            <div class="coursecard__container">
+              <article class="coursecard coursecard__item" >
+                <div class="coursecard__image">
                     <img src="<%= course.image %>" alt="<%= course.title %>">
                 </div>
-                <div class="card__content">
+                <div class="coursecard__content">
                     <p class="course__title"><%= course.title %></p>
                 </div>
               </article>
-              <h3 class="course__description"><%= course.description %></h3>
+              <h3 class="coursecard__description"><%= course.description %></h3>
               <form method="POST" action="/course-signup">
                 <input type="hidden" value="<%=course.id%>" name="id">
                 <input type="hidden" name="_csrf" value="<%=csrfToken%>">

@@ -1,4 +1,3 @@
-$primary2: darken(adjust-hue(blue, 45deg), 15%);
 $primary: adjust-hue(lighten(#008080, 15%), 45deg);
 $a45: adjust-hue($primary, 45deg);
 $a90: adjust-hue($primary, 90deg);
@@ -23,12 +22,8 @@ $border: 2px solid $primary;
 $borderlegend: 10px solid $primary;
 $radiuslegend: 20px;
 $borderfocus: 3px solid $a45;
+$bordercard: 3px solid $a45;
 $inputfocus: lighten($a180, 40%);
-
-$headerfont: 'Yanone Kaffeesatz', sans-serif;
-$textfont: "Nunito", sans-serif;
-$headingfont: "Dosis", sans-serif;
-
 
 $buttonborder: 2px solid $accent;
 $fontsize: max(2vw);

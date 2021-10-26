@@ -12,12 +12,12 @@
           <div class="grid-container">
               <% for (let course of courses) { %>
                 <a href="/course-list/<%=course.id %>">
-                  <article class="card course-item" >
-                    <div class="card__image">
+                  <article class="coursecard coursecard__item" >
+                    <div class="coursecard__image">
                         <img src="<%= course.image %>" alt="<%= course.title %>">
                     </div>
-                    <div class="card__content">
-                        <p class="course__title"><%= course.title %></p>
+                    <div class="coursecard__content">
+                        <p class="coursecard__title"><%= course.title %></p>
                     </div>
                   </article>
                 </a>

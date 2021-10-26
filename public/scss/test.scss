@@ -2,6 +2,10 @@
 
 @import "variables";
 
+$headerfont: "Yanone Kaffeesatz", sans-serif;
+$textfont: "Nunito", sans-serif;
+$headingfont: "Dosis", sans-serif;
+
 @function light-dark($color) {
   @if (lightness($color)>45) {
     @return $primary;

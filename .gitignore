@@ -6,6 +6,10 @@ nodemon.json
 mynodemon.json
 
 *.css.map
+test.html
+test.css
+test.scss
+
 
 *.code-workspace*
 
