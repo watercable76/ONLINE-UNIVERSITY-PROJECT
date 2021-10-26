@@ -118,6 +118,8 @@ button.btn:active, button.btn:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border: 0.1rem solid rgba(0, 51, 205, 0.26);
+  background: #cd9900;
+  color: #fff2cd;
 }
 
 .course-container img {
@@ -472,6 +474,10 @@ form {
 .card__content h2,
 .card__content p {
   margin: 0;
+}
+
+.course__description {
+  color: #fff2cd;
 }
 
 .card__image {
