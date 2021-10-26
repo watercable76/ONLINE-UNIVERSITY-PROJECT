@@ -86,7 +86,7 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.session.isLoggedIn;
   // IMPORTANT: Replace this with notification of user being a teacher
-  res.locals.isTeacher = req.user.role == "Teacher";
+  res.locals.isTeacher = req.user && req.user.role == "Teacher";
   // END
   res.locals.csrfToken = req.csrfToken();
   next();
@@ -100,6 +100,7 @@ app.get("/500", errorController.get500);
 app.use(errorController.get404);
 
 app.use((error, req, res, next) => {
+  console.log(error);
   res.redirect("/500");
 });
 
@@ -107,6 +108,6 @@ mongoose
   .connect(MONGODB_URL, options)
   .then((result) => {
     app.listen(PORT);
-    console.log('App listening on ' + PORT);
+    console.log("App listening on " + PORT);
   })
   .catch((err) => console.log(err));

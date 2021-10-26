@@ -1,6 +1,6 @@
 module.exports = (req, res, next) => {
-    if (!req.session.isTeacher) {
-        return res.redirect('/login');
-    }
-    next();
-}
+  if (!res.locals.isTeacher) {
+    return res.redirect("/login");
+  }
+  next();
+};
