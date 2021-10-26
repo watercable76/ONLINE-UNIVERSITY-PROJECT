@@ -11,7 +11,7 @@
         <% if (courses.length > 0) { %>
           <div class="grid-container">
               <% for (let course of courses) { %>
-                <a href="/course-list/<%=course.id %>">
+                <a href="/courses/<%=course.id %>">
                   <article class="coursecard coursecard__item" >
                     <div class="coursecard__image">
                         <img src="<%= course.image %>" alt="<%= course.title %>">
