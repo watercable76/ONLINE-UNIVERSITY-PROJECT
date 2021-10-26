@@ -1,5 +1,3 @@
-const Product = require("../models/product");
-const Order = require("../models/order");
 const Course = require("../models/course");
 const InstructorRequest = require("../models/instructor-request");
 
