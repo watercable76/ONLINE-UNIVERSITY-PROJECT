@@ -10,13 +10,19 @@
       <div class="container">
           <% for (let course of courses) { %>
             <div class="coursecard__container">
-              <article class="coursecard coursecard__item" >
-                <div class="coursecard__image">
-                    <img src="<%= course.image %>" alt="<%= course.title %>">
-                </div>
+              <div class="coursecard__image">
+                  <img src="<%= course.image %>" alt="<%= course.title %>">
+              </div>
+              <article class="coursecard__item" >
                 <div class="coursecard__content">
-                    <p class="course__title"><%= course.title %></p>
+                  <h3 class="coursecard__title"><%= course.title %></h3>
+                    <p class="course__description"><%= course.description %></p>
                 </div>
+                <form method="POST" action="/course-signup">
+                  <input type="hidden" value="<%=course.id%>" name="id">
+                  <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                  <button class="btn" type="submit">Let Me Take This Course</button>
+                </form>
               </article>
               <h3 class="coursecard__description"><%= course.description %></h3>
               <% if (isAuthenticated) { %>
