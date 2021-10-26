@@ -19,11 +19,13 @@
                 </div>
               </article>
               <h3 class="coursecard__description"><%= course.description %></h3>
+              <% if (isAuthenticated) { %>
               <form method="POST" action="/course-signup">
                 <input type="hidden" value="<%=course.id%>" name="id">
                 <input type="hidden" name="_csrf" value="<%=csrfToken%>">
                 <button class="btn" type="submit">Let Me Take This Course</button>
               </form>
+              <% } %>
 
             </div>
           <% } %>
