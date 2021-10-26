@@ -25,7 +25,7 @@ exports.getIndex = async (req, res, next) => {
 exports.getCourses = (req, res, next) => {
   getCourses()
     .then((courses) => {
-      res.render("app/course-list", {
+      res.render("app/courses", {
         courses,
         pageTitle: "All Courses",
         path: "/courses",

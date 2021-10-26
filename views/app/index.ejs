@@ -1,6 +1,4 @@
 <%- include('../includes/head.ejs') %>
-
-<link rel="stylesheet" href="/public/css/course.css">
 </head>
 
 <body>
@@ -13,13 +11,13 @@
         <% if (courses.length > 0) { %>
           <div class="container">
               <% for (let course of courses) { %>
-                <div class="course-container">
-                    <div class="card__image">
+                <div class="coursecard__container">
+                    <div class="coursecard__image">
                       <img src="<%= course.image %>" alt="<%= course.title %>">
                     </div>
-                    <div class="card__content">
-                        <h3 class="course__description"><%= course.title %></h3>
-                        <p class="course__title"><%= course.description %></p>
+                    <div class="coursecard__content">
+                        <h3 class="coursecard__description"><%= course.title %></h3>
+                        <p class="coursecard__title"><%= course.description %></p>
                     </div>
                 </div>
               <% } %>
