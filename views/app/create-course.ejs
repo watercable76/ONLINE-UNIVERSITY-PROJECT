@@ -10,22 +10,30 @@
       <h2>Add Course</h2>
       <form method="POST" action="/instructor/courses/create">
         <div class="form-control">
+          <label for="image">Course Image</label>
+          <input id="image" type="text" name="image">
+        </div>
+        <div class="form-control">
           <label for="title">Course Title</label>
           <input id="title" type="text" name="title">
         </div>
         <div class="form-control">
-          <label for="imageUrl">Course Image Url</label>
-          <input id="imageUrl" type="email" name="imageUrl">
+          <label for="maxStudents">Max Students</label>
+          <input id="maxStudents" type="number" name="maxStudents">
         </div>
         <div class="form-control">
           <label for="description">Course Description</label>
           <textarea id="description" name="description"></textarea>
         </div>
         <div class="form-control">
-          <input type="hidden" name="userId" value="<%=user.id %>">
+          <label for="content">Course Countent</label>
+          <textarea id="content" name="content"></textarea>
+        </div>
+        <div class="form-control">
+          <input type="hidden" name="instructorId" value="<%=user.id %>">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
           <button type="submit">Add Course</button>
         </div>
-
       </form>
   </main>
 

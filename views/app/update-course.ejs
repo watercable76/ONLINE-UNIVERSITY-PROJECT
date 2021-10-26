@@ -10,22 +10,31 @@
       <h2>Edit Course</h2>
       <form method="POST" action="/instructor/courses/update">
         <div class="form-control">
-          <label for="title">Course Title</label>
-          <input id="title" type="text" name="title">
+          <label for="image">Course Image</label>
+          <input id="image" type="text" name="image" value="<%= course.image %>">
         </div>
         <div class="form-control">
-          <label for="imageUrl">Course Image Url</label>
-          <input id="imageUrl" type="email" name="imageUrl">
+          <label for="title">Course Title</label>
+          <input id="title" type="text" name="title" value="<%= course.title %>">
+        </div>
+        <div class="form-control">
+          <label for="maxStudents">Max Students</label>
+          <input id="maxStudents" type="number" name="maxStudents" value="<%= course.maxStudents %>">
         </div>
         <div class="form-control">
           <label for="description">Course Description</label>
-          <textarea id="description" name="description"></textarea>
+          <textarea id="description" name="description"><%= course.description %></textarea>
         </div>
         <div class="form-control">
-          <input type="hidden" name="userId" value="<%=user.id %>">
-          <button type="submit">Update</button>
+          <label for="content">Course Countent</label>
+          <textarea id="content" name="content"><%= course.content %></textarea>
         </div>
-
+        <div class="form-control">
+          <input type="hidden" name="instructorId" value="<%=user.id %>">
+          <input type="hidden" name="id" value="<%=course.id %>">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <button type="submit">Edit Course</button> 
+        </div>
       </form>
   </main>
 
