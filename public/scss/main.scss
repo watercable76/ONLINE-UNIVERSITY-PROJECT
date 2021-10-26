@@ -1,11 +1,11 @@
 @import "variables";
 @import "fonts";
-@import "large";
 @import "forms";
 @import "course";
 @import "cart";
 @import "orders";
 @import "product";
+@import "large";
 
 
 * {
@@ -283,4 +283,30 @@ form {
 .pagination a.active {
   background: $primary;
   color: $primary;
+}
+
+@media (min-width: 768px) {
+
+  .main-header__nav {
+    display: flex;
+  }
+
+  #side-menu-toggle {
+    display: none;
+  }
+
+  .user-message {
+    width: 30rem;
+  }
+
+  button.btn {
+    max-width: 60%;
+    margin: 20px 15%;
+  }
+
+  fieldset.form-control,
+  div.form-control,
+  fieldset.form-control {
+    max-width: 50vw;
+  }
 }

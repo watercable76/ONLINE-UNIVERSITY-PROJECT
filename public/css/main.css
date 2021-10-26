@@ -3,29 +3,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #0033cd;
 }
 
-@media (min-width: 768px) {
-  .main-header__nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  #side-menu-toggle {
-    display: none;
-  }
-  .user-message {
-    width: 30rem;
-  }
-  button.btn {
-    max-width: 70%;
-    margin: 20px 15%;
-  }
-  fieldset.form-control,
-  div.form-control,
-  fieldset.form-control {
-    max-width: 50vw;
-  }
-}
-
 .form-control {
   margin: auto;
   color: #0033cd;
@@ -581,5 +558,28 @@ form {
 .pagination a.active {
   background: #0033cd;
   color: #0033cd;
+}
+
+@media (min-width: 768px) {
+  .main-header__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #side-menu-toggle {
+    display: none;
+  }
+  .user-message {
+    width: 30rem;
+  }
+  button.btn {
+    max-width: 60%;
+    margin: 20px 15%;
+  }
+  fieldset.form-control,
+  div.form-control,
+  fieldset.form-control {
+    max-width: 50vw;
+  }
 }
 /*# sourceMappingURL=main.css.map */
