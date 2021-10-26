@@ -12,7 +12,6 @@ const flash = require("connect-flash");
 const cors = require("cors");
 
 // import files
-const adminRoutes = require("./routes/admin");
 const courseRoutes = require("./routes/course");
 const authRoutes = require("./routes/auth");
 const errorController = require("./controllers/error");
