@@ -11,15 +11,15 @@
       <form method="POST" action="/instructor/courses/update">
         <div class="form-control">
           <label for="title">Course Title</label>
-          <input id="title" type="text" name="title">
+          <input id="title" type="text" name="title" value="<%=course.id %>">
         </div>
         <div class="form-control">
           <label for="imageUrl">Course Image Url</label>
-          <input id="imageUrl" type="email" name="imageUrl">
+          <input id="imageUrl" type="email" name="imageUrl" value="<%=course.url%>">
         </div>
         <div class="form-control">
           <label for="description">Course Description</label>
-          <textarea id="description" name="description"></textarea>
+          <textarea id="description" name="description" value="<%=course.description%>"></textarea>
         </div>
         <div class="form-control">
           <input type="hidden" name="userId" value="<%=user.id %>">
