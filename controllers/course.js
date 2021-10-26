@@ -58,6 +58,24 @@ exports.getCourse = (req, res, next) => {
     });
 };
 
+exports.getInstructorCourse = (req, res, next) => {
+  const courseId = req.params.courseId;
+
+  getCourses()
+    .then((courses) => {
+      res.render("app/instructor-course", {
+        course: courses.filter((x) => x.id.toString() === courseId.toString())[0],
+        pageTitle: `Course ${courseId}`,
+        path: "/instructor-course",
+      });
+    })
+    .catch((err) => {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    });
+};
+
 exports.getEnrolledCourses = (req, res, next) => {
   const userId = "2"; //dummy
 
@@ -101,9 +119,8 @@ exports.postTeachWithUs = async (req, res, next) => {
 
 exports.getInstructorCourses = async (req, res, next) => {
   try {
-
     const courses = await Course.find({ instructorId: req.user.id });
-    
+
     res.render("app/instructor-courses", {
       path: "/instructor/courses",
       pageTitle: "Your Courses",
@@ -119,10 +136,10 @@ exports.getInstructorCourses = async (req, res, next) => {
 exports.getCreateInstructorCourses = async (req, res, next) => {
   try {
     const courses = await Course.find({ instructorId: req.user.id });
-    console.log("Created course", courses);
     res.render("app/create-course", {
       path: "/instructor/courses/create",
       pageTitle: "Create Course",
+      user: req.user,
       courses,
     });
   } catch (e) {
@@ -151,12 +168,11 @@ exports.getUpdateInstructorCourse = async (req, res, next) => {
     const courseId = req.params.courseId;
     const course = await Course.findById(courseId);
 
-    console.log(course);
-
     res.render("app/update-course", {
       path: "/instructor/courses/update",
       pageTitle: "Update the Course",
       course,
+      user: req.user,
     });
   } catch (e) {
     console.log("exports.getUpdateInstructorCourse");
@@ -166,15 +182,20 @@ exports.getUpdateInstructorCourse = async (req, res, next) => {
 };
 
 exports.postUpdateInstructorCourse = async (req, res, next) => {
+  console.log("course");
+
   try {
     const updatedCourse = req.body;
-    
-    await Course.findByIdAndUpdate(updatedCourse.id, {
+
+    console.log(updatedCourse);
+
+    const stuff = await Course.findByIdAndUpdate(updatedCourse.id, {
       $set: {
         ...updatedCourse,
       },
     });
-    
+    updatedCourse;
+
     res.redirect("/instructor/courses");
   } catch (e) {
     console.log("exports.postUpdateInstructorCourse");

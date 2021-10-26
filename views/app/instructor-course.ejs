@@ -1,0 +1,31 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/public/css/course.css">
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main class="centered">
+    <h1>Your Courses</h1>
+    <div class="container">
+      <div class="course-container">
+        <article class="card course-item" >
+          <div class="card__image">
+              <img src="<%= course.image %>" alt="<%= course.title %>">
+          </div>
+          <div class="card__content">
+              <p class="course__title"><%= course.title %></p>
+          </div>
+        </article>
+        <h3 class="course__description"><%= course.description %></h3>
+        <a href="/instructor/courses/update/<%= course.id %>">
+          <button class="btn" >Update the Course</button>
+        </a>
+        <a href="/instructor/courses/delete/<%= course.id %>">
+          <button class="btn" >Delete the Course</button>
+        </a>
+
+      </div>
+    </div>
+  </main>
+      <%- include('../includes/end.ejs') %>

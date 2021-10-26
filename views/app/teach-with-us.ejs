@@ -23,6 +23,7 @@
             </div>
             <div class="form-control">
               <input type="hidden" name="userId" value="<%=user.id %>">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
               <button class="btn" type="submit">Let Me Teach</button>
             </div>
         </fieldset>
