@@ -13,6 +13,8 @@ routes.get("/home", courses.getIndex);
 
 routes.get("/courses", courses.getCourses);
 
+routes.post("/course-signup", courses.postCourseSignup);
+
 routes.get("/courses/:courseId", courses.getCourse);
 
 routes.get("/user/enrolled-courses", isAuth, courses.getEnrolledCourses);
@@ -33,6 +35,6 @@ routes.get("/instructor/courses/update/:courseId", isAuth, isTeacher, courses.ge
 
 routes.post("/instructor/courses/update", isAuth, isTeacher, courses.postUpdateInstructorCourse);
 
-routes.delete("/instructor/courses/delete/:courseId", isAuth, isTeacher, courses.postDeleteInstructorCourse);
+routes.post("/instructor/courses/delete/:courseId", isAuth, isTeacher, courses.postDeleteInstructorCourse);
 
 module.exports = routes;
