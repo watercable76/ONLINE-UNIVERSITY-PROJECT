@@ -35,10 +35,6 @@ routes.get("/instructor/courses/update/:courseId", isAuth, isTeacher, courses.ge
 
 routes.post("/instructor/courses/update", isAuth, isTeacher, courses.postUpdateInstructorCourse);
 
-routes.post("/cart-delete-item", isAuth, courses.postCartDeleteProduct);
-
-routes.get("/orders", isAuth, courses.getOrders);
-
-routes.post("/create-order", isAuth, courses.postOrder);
+routes.delete("/instructor/courses/delete/:courseId", isAuth, isTeacher, courses.postDeleteInstructorCourse);
 
 module.exports = routes;
