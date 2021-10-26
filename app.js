@@ -86,7 +86,7 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.session.isLoggedIn;
   // IMPORTANT: Replace this with notification of user being a teacher
-  res.locals.isTeacher = req.session.isLoggedIn;
+  res.locals.isTeacher = req.user.role == "Teacher";
   // END
   res.locals.csrfToken = req.csrfToken();
   next();
