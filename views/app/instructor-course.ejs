@@ -21,6 +21,7 @@
         <a href="/instructor/courses/update/<%= course.id %>">
           <button class="btn" >Update the Course</button>
         </a>
+        <p>Enrolled students: <%= course.registeredStudents && course.registeredStudents.length %></p>
         <form action="/instructor/courses/delete/<%= course.id %>" method="POST">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
           <button class="submit" >Delete the Course</button>

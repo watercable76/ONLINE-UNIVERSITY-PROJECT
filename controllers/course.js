@@ -9,6 +9,7 @@ const getCourses = async () => {
 exports.getIndex = async (req, res, next) => {
   getCourses()
     .then((courses) => {
+      console.log(courses);
       res.render("app/index", {
         courses: courses && courses.slice(0, 2),
         pageTitle: "Home",
@@ -75,15 +76,16 @@ exports.getInstructorCourse = (req, res, next) => {
 };
 
 exports.getEnrolledCourses = (req, res, next) => {
-  // const userId = "2"; //dummy
-  const userId = req.params.userId;
+  const userId = req.user.id;
 
-  getCourses()
+  Course.find({
+    registeredStudents: userId,
+  })
     .then((courses) => {
       res.render("app/enrolled-courses", {
         path: "/user/enrolled-courses",
         pageTitle: "My Enrolled Courses",
-        courses: courses.filter((x) => x.registeredStudents.includes(userId)),
+        courses,
       });
     })
     .catch((err) => {
@@ -188,7 +190,7 @@ exports.postUpdateInstructorCourse = async (req, res, next) => {
 
     console.log(updatedCourse);
 
-    const stuff = await Course.findByIdAndUpdate(updatedCourse.id, {
+    await Course.findByIdAndUpdate(updatedCourse.id, {
       $set: {
         ...updatedCourse,
       },
@@ -204,31 +206,34 @@ exports.postUpdateInstructorCourse = async (req, res, next) => {
 };
 
 exports.postDeleteInstructorCourse = async (req, res, next) => {
-
   try {
     const courseId = req.params.courseId;
-    const result = await Course.deleteOne({_id: courseId}).then(result => console.log(result));
-    
+    const result = await Course.deleteOne({ _id: courseId }).then((result) => console.log(result));
+
     res.redirect("/instructor/courses/");
   } catch (e) {
     console.log("exports.postDeleteInstructorCourse");
     console.log(e);
-    res.redirect("/")
+    res.redirect("/");
   }
-}
+};
 
 exports.postCourseSignup = async (req, res, next) => {
   const courseId = req.body.id;
-  const userId = req.body.userId;
+  const userId = req.user.id;
+
   try {
-    const result = await User.updateOne({_id : userId}, {$push: { enrolledCourses : { course: courseId}}});
-    console.log(result);
-    await Course.updateOne({_id : courseId}, {$push: { registeredStudents: userId}});
-    res.redirect('/user/enrolled-courses')
-  } catch(err) {
-    console.log("exports.postDeleteInstructorCourse");
+    await Course.findByIdAndUpdate(courseId, {
+      $push: {
+        registeredStudents: userId,
+      },
+    });
+
+    res.redirect("/user/enrolled-courses");
+    return;
+  } catch (err) {
+    console.log("exports.postCourseSignup");
     console.log(err);
-    res.redirect("/")
+    res.redirect("/");
   }
-  
-}
+};
