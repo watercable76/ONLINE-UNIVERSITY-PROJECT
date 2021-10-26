@@ -460,6 +460,7 @@ form {
 .card {
   -webkit-box-shadow: 0 2px 8px rgba(0, 51, 205, 0.26);
           box-shadow: 0 2px 8px rgba(0, 51, 205, 0.26);
+  background: #cd9900;
 }
 
 .card__header,
@@ -493,6 +494,20 @@ form {
 .card__actions button,
 .card__actions a {
   margin: 0 0.25rem;
+}
+
+.course-container {
+  background: #cd9900;
+  border: 2px solid #0033cd;
+  border-radius: 3px;
+}
+
+.course__description {
+  color: #fff2cd;
+}
+
+.course__title {
+  color: #fff2cd;
 }
 
 .btn {
