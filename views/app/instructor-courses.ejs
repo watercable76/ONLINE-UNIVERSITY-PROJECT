@@ -1,0 +1,33 @@
+<%- include('../includes/head.ejs') %>
+
+<link rel="stylesheet" href="/css/course.css">
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main>
+      <h2>Enrolled Courses</h2>
+        <% if (courses.length > 0) { %>
+          <div class="grid-container">
+              <% for (let course of courses) { %>
+                <% console.log(course) %>
+                <a href="/course-list/<%=course.id %>">
+                  <article class="card course-item" >
+                    <div class="card__image">
+                        <img src="<%= course.image %>" alt="<%= course.title %>">
+                    </div>
+                    <div class="card__content">
+                        <p class="course__title"><%= course.title %></p>
+                    </div>
+                  </article>
+                </a>
+                
+              <% } %>
+          </div>
+      <% } else { %>
+          <h2>No courses found! Add one?</h1>
+      <% } %>
+  </main>
+
+<%- include('../includes/end.ejs') %>

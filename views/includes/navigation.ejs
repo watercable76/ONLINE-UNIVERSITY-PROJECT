@@ -18,6 +18,14 @@
         <a class="<%= path === '/user/teach-with-us' ? 'active' : '' %>" href="/user/teach-with-us">Teach with Us</a>
       </li>
       <% } %>
+      <% if (isTeacher) { %>
+        <li class="main-header__item">
+          <a class="<%= path === '/instructor/courses/create' ? 'active' : '' %>" href="/instructor/courses/create">Add Course</a>
+        </li>
+        <li class="main-header__item">
+          <a class="<%= path === '/instructor/courses/' ? 'active' : '' %>" href="/instructor/courses/">Instructing Courses</a>
+        </li>
+      <% } %>
     </ul>
     <ul class="main-header__item-list">
       <% if (!isAuthenticated) { %>
@@ -52,9 +60,15 @@
       <a class="<%= path === '/user/enrolled-courses' ? 'active' : '' %>" href="/user/enrolled-courses">Course List</a>
     </li>
     <li class="mobile-nav__item">
-      <a class="<%= path === '/user/teach-with-us' ? 'active' : '' %>" href="/user/teach-with-us">Teach with Us</a>
+      <a class="<%= path === '/user/teach-with-us' ? 'active' : '' %>" href="/user/teach-with-us">Add Course</a>
     </li>
-    <% } %> <% if (!isAuthenticated) { %>
+    <% } %>
+    <% if (isTeacher) { %>
+      <li class="main-header__item">
+        <a class="<%= path === '/instructor/courses/create' ? 'active' : '' %>" href="/instructor/courses/create">Add Course</a>
+      </li>
+    <% } %>
+    <% if (!isAuthenticated) { %>
     <li class="mobile-nav__item">
       <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a>
     </li>
