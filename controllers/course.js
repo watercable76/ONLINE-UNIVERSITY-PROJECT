@@ -1,6 +1,6 @@
 const Course = require("../models/course");
 const InstructorRequest = require("../models/instructor-request");
-
+const User = require("../models/user");
 // TODO: implement database here
 const getCourses = async () => {
   return await Course.find();
@@ -217,8 +217,18 @@ exports.postDeleteInstructorCourse = async (req, res, next) => {
   }
 }
 
-exports.postCourseSignup = (req, res, next) => {
+exports.postCourseSignup = async (req, res, next) => {
   const courseId = req.body.id;
+  const userId = req.body.userId;
+  try {
+    const result = await User.updateOne({_id : userId}, {$push: { enrolledCourses : { course: courseId}}});
+    console.log(result);
+    await Course.updateOne({_id : courseId}, {$push: { registeredStudents: userId}});
+    res.redirect('/user/enrolled-courses')
+  } catch(err) {
+    console.log("exports.postDeleteInstructorCourse");
+    console.log(err);
+    res.redirect("/")
+  }
   
-  res.redirect('/user/enrolled-courses')
 }
