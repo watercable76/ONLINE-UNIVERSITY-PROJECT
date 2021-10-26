@@ -15,6 +15,15 @@ h1, h2, h3, h4, h5, h6 {
   .user-message {
     width: 30rem;
   }
+  button.btn {
+    max-width: 70%;
+    margin: 20px 15%;
+  }
+  fieldset.form-control,
+  div.form-control,
+  fieldset.form-control {
+    max-width: 50vw;
+  }
 }
 
 .form-control {
@@ -22,9 +31,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #0033cd;
 }
 
-form {
-  width: 80%;
-  margin: auto;
+a#reset, a#reset:hover, a#reset:visited {
+  color: #fff2cd;
 }
 
 fieldset.form-control {
@@ -43,6 +51,7 @@ div.form-control {
 }
 
 legend.form-control {
+  text-align: center;
   border-radius: 10px;
   border: 2px solid #0033cd;
   font-weight: bolder;
@@ -54,9 +63,8 @@ legend.form-control {
 .form-control label,
 .form-control input,
 .form-control textarea {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  margin: 0 0 20px 0;
+  text-align: left;
   width: 100%;
   font: inherit;
 }
@@ -87,8 +95,7 @@ legend.form-control {
 }
 
 button.btn {
-  width: 70%;
-  margin: 20px 15%;
+  width: 100%;
   background: #0033cd;
   color: #fff2cd;
   border: 2px solid #fff2cd;
@@ -245,6 +252,34 @@ button.btn:active, button.btn:hover {
   color: #0033cd;
 }
 
+.product-form {
+  width: 20rem;
+  max-width: 90%;
+  margin: auto;
+  display: block;
+}
+
+.product-item {
+  width: 70vw;
+  max-width: 95%;
+  margin: 1rem;
+}
+
+.product__title {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.product__price {
+  text-align: center;
+  color: #0033cd;
+  margin-bottom: 0.5rem;
+}
+
+.product__description {
+  text-align: center;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -337,7 +372,7 @@ form {
 
 .mobile-nav {
   width: 30rem;
-  height: 100vh;
+  height: 100%;
   max-width: 90%;
   position: fixed;
   left: 0;
@@ -398,6 +433,8 @@ form {
 }
 
 #side-menu-toggle {
+  height: 90%;
+  margin: .25% 0;
   -ms-flex-line-pack: start;
       align-content: flex-start;
   border: 2px solid #fff2cd;
@@ -516,14 +553,14 @@ form {
   border: 2px solid #0033cd;
   padding: 0.5rem;
   border-radius: 3px;
-  background: #ffcdf2;
   text-align: center;
 }
 
 .user-message--error {
   border-color: #cd9900;
-  background: #ffb0b0;
-  color: #cd9900;
+  background: #cd0000;
+  color: #fff2cd;
+  font-weight: bold;
 }
 
 .pagination {

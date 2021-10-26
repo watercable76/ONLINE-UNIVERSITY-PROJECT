@@ -6,7 +6,7 @@
 <body>
   <%- include('../includes/navigation.ejs') %>
 
-  <main>
+  <main class="centered">
       <h2>Enrolled Courses</h2>
         <% if (courses.length > 0) { %>
           <div class="grid-container">
@@ -22,7 +22,6 @@
                     </div>
                   </article>
                 </a>
-                
               <% } %>
           </div>
       <% } else { %>

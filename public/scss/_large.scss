@@ -1,4 +1,5 @@
 @media (min-width: 768px) {
+
     .main-header__nav {
       display: flex;
     }
@@ -11,5 +12,14 @@
       width: 30rem;
     }
 
-    
+    button.btn {
+      max-width: 70%;
+      margin: 20px 15%;
   }
+
+  fieldset.form-control,
+  div.form-control,
+  fieldset.form-control {
+      max-width: 50vw;
+  }
+}

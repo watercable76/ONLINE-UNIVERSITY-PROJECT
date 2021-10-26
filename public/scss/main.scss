@@ -5,6 +5,7 @@
 @import "course";
 @import "cart";
 @import "orders";
+@import "product";
 
 
 * {
@@ -91,7 +92,7 @@ form {
 
 .mobile-nav {
   width: 30rem;
-  height: 100vh;
+  height: 100%;
   max-width: 90%;
   position: fixed;
   left: 0;
@@ -142,6 +143,8 @@ form {
 }
 
 #side-menu-toggle {
+  height: 90%;
+  margin: .25% 0;
   align-content: flex-start;
   border: 2px solid $accent;
   border-radius: $radius;
@@ -252,14 +255,14 @@ form {
   border: $border;
   padding: 0.5rem;
   border-radius: 3px;
-  background: $accent2;
   text-align: center;
 }
 
 .user-message--error {
   border-color: $a180;
-  background: rgb(255, 176, 176);
-  color: $a180;
+  background: $warning;
+  color: $accent;
+  font-weight: bold;
 }
 
 .pagination {

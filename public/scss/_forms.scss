@@ -5,9 +5,8 @@
   color: $primary;
 }
 
-form {
-  width: 80%;
-  margin: auto;
+a#reset, a#reset:hover, a#reset:visited {
+  color: $accent;
 }
 
 fieldset.form-control {
@@ -26,6 +25,7 @@ div.form-control {
 }
 
 legend.form-control {
+    text-align: center;
     border-radius: $radius;
     border: $border;
     font-weight: bolder;
@@ -37,7 +37,8 @@ legend.form-control {
 .form-control label,
 .form-control input,
 .form-control textarea {
-    align-items: center;
+  margin: 0 0 20px 0 ;
+    text-align: left;
     width: 100%;
     font: inherit;
 }
@@ -68,8 +69,7 @@ legend.form-control {
 }
 
 button.btn {
-    width: 70%;
-    margin: 20px 15%;
+    width: 100%;
     background: $primary;
     color: $accent;
     border: $buttonborder;
@@ -81,5 +81,4 @@ button.btn:active, button.btn:hover {
   background: $accent;
   color: $primary;
   border: $border;
-
 }
