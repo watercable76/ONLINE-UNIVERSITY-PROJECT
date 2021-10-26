@@ -1,6 +1,7 @@
 // local packages/files
 const courses = require("../controllers/course");
 const isAuth = require("../middleware/is-auth");
+const isTeacher = require("../middleware/is-teacher");
 
 // third party packages
 const express = require("express");
@@ -20,15 +21,15 @@ routes.get("/user/teach-with-us", isAuth, courses.getTeachWithUs);
 
 routes.post("/user/teach-with-us", isAuth, courses.postTeachWithUs);
 
-routes.get("/instructor/courses", isAuth, courses.getInstructorCourses);
+routes.get("/instructor/courses", isAuth, isTeacher, courses.getInstructorCourses);
 
-routes.get("/instructor/courses/create", isAuth, courses.getCreateInstructorCourses);
+routes.get("/instructor/courses/create", isAuth, isTeacher, courses.getCreateInstructorCourses);
 
-routes.post("/instructor/courses/create", isAuth, courses.postCreateInstructorCourse);
+routes.post("/instructor/courses/create", isAuth, isTeacher, courses.postCreateInstructorCourse);
 
-routes.get("/instructor/courses/update/:courseId", isAuth, courses.getUpdateInstructorCourse);
+routes.get("/instructor/courses/update/:courseId", isAuth, isTeacher, courses.getUpdateInstructorCourse);
 
-routes.post("/instructor/courses/update", isAuth, courses.postUpdateInstructorCourse);
+routes.post("/instructor/courses/update", isAuth, isTeacher, courses.postUpdateInstructorCourse);
 
 routes.post("/cart-delete-item", isAuth, courses.postCartDeleteProduct);
 
