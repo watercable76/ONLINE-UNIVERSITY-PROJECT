@@ -13,6 +13,8 @@ routes.get("/home", courses.getIndex);
 
 routes.get("/courses", courses.getCourses);
 
+routes.post("/course-signup", courses.postCourseSignup);
+
 routes.get("/courses/:courseId", courses.getCourse);
 
 routes.get("/user/enrolled-courses", isAuth, courses.getEnrolledCourses);
