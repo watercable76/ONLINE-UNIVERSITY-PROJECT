@@ -15,21 +15,6 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  enrolledCourses: {
-    courses: [
-      {
-        courseId: {
-          type: Schema.Types.ObjectId,
-          ref: "Course",
-          required: true,
-        },
-        courseName: {
-          type: String,
-          required: true,
-        },
-      },
-    ],
-  },
   resetToken: String,
   resetTokenExpiration: Date,
 });
