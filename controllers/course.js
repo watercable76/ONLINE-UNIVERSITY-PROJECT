@@ -204,16 +204,21 @@ exports.postUpdateInstructorCourse = async (req, res, next) => {
 };
 
 exports.postDeleteInstructorCourse = async (req, res, next) => {
-  console.log("Deleting course");
 
   try {
-    const courseId = req.body.id;
-    const result = await Course.remove({_id: courseId}).then(result => console.log(result));
+    const courseId = req.params.courseId;
+    const result = await Course.deleteOne({_id: courseId}).then(result => console.log(result));
     
-    res.redirect("/instructor/courses");
+    res.redirect("/instructor/courses/");
   } catch (e) {
     console.log("exports.postDeleteInstructorCourse");
     console.log(e);
     res.redirect("/")
   }
+}
+
+exports.postCourseSignup = (req, res, next) => {
+  const courseId = req.body.id;
+  
+  res.redirect('/user/enrolled-courses')
 }

@@ -35,6 +35,6 @@ routes.get("/instructor/courses/update/:courseId", isAuth, isTeacher, courses.ge
 
 routes.post("/instructor/courses/update", isAuth, isTeacher, courses.postUpdateInstructorCourse);
 
-routes.delete("/instructor/courses/delete/:courseId", isAuth, isTeacher, courses.postDeleteInstructorCourse);
+routes.post("/instructor/courses/delete/:courseId", isAuth, isTeacher, courses.postDeleteInstructorCourse);
 
 module.exports = routes;
