@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&family=Nunito:wght@300&family=Righteous&family=Yanone+Kaffeesatz:wght@200;300;400;500&display=swap");
+
+@import "variables";
+
+@function light-dark($color) {
+  @if (lightness($color)>45) {
+    @return $primary;
+    } @else {
+      @if ($color == $boxshadow) {
+        @return $primary;
+      } @else {
+        @return $accent;
+    }
+  }
+}
+
+@mixin font-color($entry) {
+  $background: $entry;
+  $color: light-dark($entry);
+  background: $background;
+  color: $color;
+  &::before {
+    content: "Background: #{$background} - ";
+  }
+  &::after {
+    content: " - Font: #{$color}";
+  }
+}
+
+
+
+
+.colorbox {
+    color: $accent;
+    width: $boxside;
+    height: $boxside;
+    padding: 1vw;
+  }
+
+  .contain {
+    font-size: 1.2vw;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2vw;
+    width: 100%;
+    font-weight: bold;
+    font-family: $textfont;
+  }
+
+  .primary {
+    @include font-color($primary);
+  }
+
+  .a45 {
+    @include font-color($a45);
+  }
+
+  .a90 {
+    @include font-color($a90);
+  }
+
+  .a135 {
+    @include font-color($a135);
+  }
+
+  .a180 {
+    @include font-color($a180);
+  }
+
+  .a225 {
+    @include font-color($a225);
+  }
+
+  .a270 {
+    @include font-color($a270);
+  }
+
+  .a315 {
+    @include font-color($a315);
+  }
+
+  .accent {
+    @include font-color($accent);
+  }
+
+  .accent2 {
+    @include font-color($accent2);
+  }
+
+  .boxshadow {
+    @include font-color($boxshadow);
+  }
+
+/* Med/large screens */
+@media only screen and (min-width: 30rem) {
+
+}

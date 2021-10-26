@@ -2,3 +2,11 @@
 node_modules
 
 # ignore environment variables
+nodemon.json
+mynodemon.json
+
+*.css.map
+
+*.code-workspace*
+
+.gitignore

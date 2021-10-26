@@ -33,6 +33,8 @@ const store = new MongoDBStore({
 
 const csrfProtection = csrf();
 
+const PORT = process.env.PORT || 3000;
+
 app.set("view engine", "ejs");
 app.set("views", "views");
 
@@ -101,6 +103,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URL, options)
   .then((result) => {
-    app.listen(process.env.PORT || 3000);
+    app.listen(PORT);
+    console.log('App listening on ' + PORT);
   })
   .catch((err) => console.log(err));

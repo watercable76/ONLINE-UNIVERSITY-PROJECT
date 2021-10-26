@@ -1,11 +1,11 @@
 <%- include('../includes/head.ejs') %>
-<link rel="stylesheet" href="/css/course.css">
+<link rel="stylesheet" href="/public/css/course.css">
 </head>
 
 <body>
   <%- include('../includes/navigation.ejs') %>
-  
-  <main>
+
+  <main class="centered">
     <h1>Courses User is enrolled in</h1>
     <% if (courses.length > 0) { %>
       <div class="container">
@@ -21,9 +21,9 @@
               </article>
               <h3 class="course__description"><%= course.description %></h3>
               <form method="POST" action="/course-signup">
-                <button class="button-signup" type="submit">Signup</button>
+                <button class="btn" type="submit">Let Me Take This Course</button>
               </form>
-              
+
             </div>
           <% } %>
       </div>

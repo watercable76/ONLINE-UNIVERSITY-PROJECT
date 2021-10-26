@@ -11,7 +11,7 @@
   "author": "Nicholas Cable",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.14"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.7",
