@@ -23,9 +23,9 @@ routes.post("/user/teach-with-us", isAuth, courses.postTeachWithUs);
 
 routes.get("/instructor/courses", isAuth, isTeacher, courses.getInstructorCourses);
 
-routes.get("/instructor/courses/:courseId", isAuth, isTeacher, courses.getInstructorCourse);
-
 routes.get("/instructor/courses/create", isAuth, isTeacher, courses.getCreateInstructorCourses);
+
+routes.get("/instructor/courses/:courseId", isAuth, isTeacher, courses.getInstructorCourse);
 
 routes.post("/instructor/courses/create", isAuth, isTeacher, courses.postCreateInstructorCourse);
 
