@@ -5,7 +5,9 @@
   color: $primary;
 }
 
-a#reset, a#reset:hover, a#reset:visited {
+a#reset,
+a#reset:hover,
+a#reset:visited {
   color: $accent;
 }
 
@@ -18,66 +20,69 @@ fieldset.form-control {
 
 fieldset.form-control,
 div.form-control {
-    width: 80%;
-    margin: auto;
-    background: $a180;
-    color: $accent;
+  width: 80%;
+  margin: auto;
+  background: $a180;
+  color: $accent;
 }
 
 legend.form-control {
-    text-align: center;
-    border-radius: $radius;
-    border: $border;
-    font-weight: bolder;
-    color: $primary;
-    padding: 1vw;
-    background: $accent;
+  text-align: center;
+  border-radius: $radius;
+  border: $border;
+  font-weight: bolder;
+  color: $primary;
+  padding: 1vw;
+  background: $accent;
 }
 
 .form-control label,
 .form-control input,
 .form-control textarea {
-  margin: 0 0 20px 0 ;
-    text-align: left;
-    width: 100%;
-    font: inherit;
+  margin: 0 0 20px 0;
+  text-align: left;
+  width: 100%;
+  font: inherit;
 }
 
-.form-control label {
+.form-control {
+  label {
     margin: 20px 0 0 0;
-}
+  }
 
-.form-control input,
-.form-control textarea {
-  background: $accent;
-  margin-bottom: 5vw;
-  border: $border;
-  border-radius: $radius;
-}
+  input,
+  textarea {
+    background: $accent;
+    margin-bottom: 5vw;
+    border: $border;
+    border-radius: $radius;
+  }
 
-.form-control input:focus,
-.form-control textarea:focus {
-  background: $inputfocus;
-  border: $borderfocus;
-  color: $primary;
-}
+  input:focus,
+  textarea:focus {
+    background: $inputfocus;
+    border: $borderfocus;
+    color: $primary;
+  }
 
-.form-control input.invalid,
-.form-control textarea.invalid {
-  border-color: $a180;
-  background: lighten($a180, 30%);
+  input.invalid,
+  textarea.invalid {
+    border-color: $a180;
+    background: lighten($a180, 30%);
+  }
 }
 
 button.btn {
-    width: 100%;
-    background: $primary;
-    color: $accent;
-    border: $buttonborder;
-    border-radius: $radius;
-    box-shadow: $boxshadow;
+  width: 100%;
+  background: $primary;
+  color: $accent;
+  border: $buttonborder;
+  border-radius: $radius;
+  box-shadow: $boxshadow;
 }
 
-button.btn:active, button.btn:hover {
+button.btn:active,
+button.btn:hover {
   background: $accent;
   color: $primary;
   border: $border;

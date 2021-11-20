@@ -1,6 +1,8 @@
 # ignore the node_modules
 node_modules
 
-
 # ignore the env file
 .env
+
+# ignore scss mapping files
+*.css.map

@@ -1,0 +1,84 @@
+.form-control {
+  margin: auto;
+  color: #0033cd;
+}
+
+a#reset,
+a#reset:hover,
+a#reset:visited {
+  color: #fff2cd;
+}
+
+fieldset.form-control {
+  border-radius: 20px;
+  border: 10px solid #0033cd;
+  width: 80%;
+  margin: auto;
+}
+
+fieldset.form-control,
+div.form-control {
+  width: 80%;
+  margin: auto;
+  background: #cd9900;
+  color: #fff2cd;
+}
+
+legend.form-control {
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #0033cd;
+  font-weight: bolder;
+  color: #0033cd;
+  padding: 1vw;
+  background: #fff2cd;
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+  margin: 0 0 20px 0;
+  text-align: left;
+  width: 100%;
+  font: inherit;
+}
+
+.form-control label {
+  margin: 20px 0 0 0;
+}
+.form-control input,
+.form-control textarea {
+  background: #fff2cd;
+  margin-bottom: 5vw;
+  border: 2px solid #0033cd;
+  border-radius: 10px;
+}
+.form-control input:focus,
+.form-control textarea:focus {
+  background: #ffe69a;
+  border: 3px solid #6600cd;
+  color: #0033cd;
+}
+.form-control input.invalid,
+.form-control textarea.invalid {
+  border-color: #cd9900;
+  background: #ffd967;
+}
+
+button.btn {
+  width: 100%;
+  background: #0033cd;
+  color: #fff2cd;
+  border: 2px solid #fff2cd;
+  border-radius: 10px;
+  box-shadow: rgba(0, 51, 205, 0.26);
+}
+
+button.btn:active,
+button.btn:hover {
+  background: #fff2cd;
+  color: #0033cd;
+  border: 2px solid #0033cd;
+}
+
+/*# sourceMappingURL=forms.css.map */

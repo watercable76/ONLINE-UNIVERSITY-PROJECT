@@ -3,7 +3,9 @@
   color: #0033cd;
 }
 
-a#reset, a#reset:hover, a#reset:visited {
+a#reset,
+a#reset:hover,
+a#reset:visited {
   color: #fff2cd;
 }
 
@@ -44,7 +46,6 @@ legend.form-control {
 .form-control label {
   margin: 20px 0 0 0;
 }
-
 .form-control input,
 .form-control textarea {
   background: #fff2cd;
@@ -52,14 +53,12 @@ legend.form-control {
   border: 2px solid #0033cd;
   border-radius: 10px;
 }
-
 .form-control input:focus,
 .form-control textarea:focus {
   background: #ffe69a;
   border: 3px solid #6600cd;
   color: #0033cd;
 }
-
 .form-control input.invalid,
 .form-control textarea.invalid {
   border-color: #cd9900;
@@ -72,11 +71,11 @@ button.btn {
   color: #fff2cd;
   border: 2px solid #fff2cd;
   border-radius: 10px;
-  -webkit-box-shadow: rgba(0, 51, 205, 0.26);
-          box-shadow: rgba(0, 51, 205, 0.26);
+  box-shadow: rgba(0, 51, 205, 0.26);
 }
 
-button.btn:active, button.btn:hover {
+button.btn:active,
+button.btn:hover {
   background: #fff2cd;
   color: #0033cd;
   border: 2px solid #0033cd;
@@ -88,79 +87,36 @@ button.btn:active, button.btn:hover {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-right: auto;
   margin-left: auto;
 }
 
-.coursecard {
-  -webkit-box-shadow: 0 2px 8px rgba(0, 51, 205, 0.26);
-          box-shadow: 0 2px 8px rgba(0, 51, 205, 0.26);
-  background: #cd9900;
-}
-
-.coursecard article form button {
-  max-width: 50%;
-  margin: 0 0.25rem;
-}
-
-.coursecard__container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+.course-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
   margin: 1rem;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 0.1rem solid rgba(0, 51, 205, 0.26);
-  background: #cd9900;
-  border: 3px solid #6600cd;
-  border-radius: 10px;
-  color: #fff2cd;
 }
-
-.coursecard__container__image {
-  max-width: 50%;
-  height: 10rem;
-  text-align: center;
-  padding: 0;
-}
-
-.coursecard__container img {
+.course-container img {
   min-height: auto;
   max-height: 400px;
-  margin: 2vw;
-  max-width: 50%;
-  max-height: 100%;
 }
-
-.coursecard__content {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.coursecard__item {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.coursecard__actions {
-  padding: 1rem;
-  text-align: center;
-}
-
 .course-container * {
   margin-right: 1rem;
 }
@@ -172,39 +128,79 @@ button.btn:active, button.btn:hover {
   border: #fff2cd;
 }
 
+.coursecard {
+  box-shadow: 0 2px 8px rgba(0, 51, 205, 0.26);
+  background: #cd9900;
+}
+.coursecard article form button {
+  max-width: 50%;
+  margin: 0 0.25rem;
+}
+.coursecard__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.1rem solid rgba(0, 51, 205, 0.26);
+  background: #cd9900;
+  border: 3px solid #6600cd;
+  border-radius: 10px;
+  color: #fff2cd;
+}
+.coursecard__container__image {
+  max-width: 50%;
+  height: 10rem;
+  text-align: center;
+  padding: 0;
+}
+.coursecard__container img {
+  min-height: auto;
+  max-height: 400px;
+  margin: 2vw;
+  max-width: 50%;
+  max-height: 100%;
+}
+.coursecard__content {
+  flex-direction: column;
+}
+.coursecard__item {
+  flex-direction: column;
+}
+.coursecard__actions {
+  padding: 1rem;
+  text-align: center;
+}
+
 .grid-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
-
 .grid-container a p {
   color: #cd9900;
   background-color: transparent;
   text-decoration: none;
 }
-
 .grid-container a article {
   margin: 1rem;
 }
-
 .grid-container a img {
   min-height: auto;
   max-height: 300px;
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -244,39 +240,27 @@ form {
   height: 3.5rem;
   background: #0033cd;
   padding: 0 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   justify-items: left;
   color: #fff2cd;
 }
-
 .main-header__nav {
   height: 100%;
   width: 100%;
   display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
-
 .main-header__item-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .main-header__item {
   margin: 0 1rem;
   padding: 0;
 }
-
 .main-header__item a, .main-header__item button {
   font: inherit;
   background: transparent;
@@ -286,7 +270,6 @@ form {
   cursor: pointer;
   font-weight: bold;
 }
-
 .main-header__item a:hover,
 .main-header__item a:active,
 .main-header__item button:hover,
@@ -305,32 +288,20 @@ form {
   background: #0033cd;
   z-index: 10;
   padding: 2rem 1rem 1rem 2rem;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
+  transform: translateX(-100%);
   transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
-
 .mobile-nav__item-list {
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin: 0;
   padding: 0;
 }
-
 .mobile-nav__item {
   margin: 1vw;
   padding: 0;
 }
-
 .mobile-nav__item a,
 .mobile-nav__item button {
   font: inherit;
@@ -341,7 +312,6 @@ form {
   border: none;
   cursor: pointer;
 }
-
 .mobile-nav__item a:active,
 .mobile-nav__item a:hover,
 .mobile-nav__item a.active,
@@ -353,15 +323,13 @@ form {
 }
 
 .mobile-nav.open {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
 
 #side-menu-toggle {
   height: 90%;
-  margin: .25% 0;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
+  margin: 0.25% 0;
+  align-content: flex-start;
   border: 2px solid #fff2cd;
   border-radius: 10px;
   font: inherit;
@@ -393,16 +361,10 @@ form {
 }
 
 .grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
 }
 
 .btn {
@@ -472,24 +434,27 @@ form {
 
 @media (min-width: 768px) {
   .main-header__nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
+
   #side-menu-toggle {
     display: none;
   }
+
   .user-message {
     width: 30rem;
   }
+
   button.btn {
     max-width: 60%;
     margin: 20px 15%;
   }
+
   fieldset.form-control,
-  div.form-control,
-  fieldset.form-control {
+div.form-control,
+fieldset.form-control {
     max-width: 50vw;
   }
 }
+
 /*# sourceMappingURL=main.css.map */
