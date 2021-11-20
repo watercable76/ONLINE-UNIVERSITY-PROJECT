@@ -20,7 +20,7 @@ const errorController = require("./controllers/error");
 const User = require("./models/user");
 const Login = require("./login");
 
-const MONGODB_URL = process.env.MONGODB_URL; console.log(MONGODB_URL);
+const MONGODB_URL = process.env.MONGODB_URL;
 
 const app = express();
 const store = new MongoDBStore({
