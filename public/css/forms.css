@@ -1,8 +1,3 @@
-.form-control {
-  margin: auto;
-  color: #0033cd;
-}
-
 a#reset,
 a#reset:hover,
 a#reset:visited {
@@ -34,17 +29,15 @@ legend.form-control {
   background: #fff2cd;
 }
 
-.form-control label,
-.form-control input,
-.form-control textarea {
+.form-control {
+  margin: auto;
+  color: #0033cd;
+}
+.form-control label, .form-control input, .form-control textarea {
   margin: 0 0 20px 0;
   text-align: left;
   width: 100%;
   font: inherit;
-}
-
-.form-control label {
-  margin: 20px 0 0 0;
 }
 .form-control input,
 .form-control textarea {
