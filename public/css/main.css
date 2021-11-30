@@ -17,6 +17,7 @@ div.form-control {
   margin: auto;
   background: #cd9900;
   color: #fff2cd;
+  padding: 12px;
 }
 
 legend.form-control {
