@@ -1,3 +1,5 @@
+/* $primary: #226aa8; (phpmotors $primary) */
+/* $primary: #226aa8; (phpmotors $primary) */
 a#reset,
 a#reset:hover,
 a#reset:visited {
@@ -9,38 +11,22 @@ fieldset {
   border: 10px solid #0033cd;
   width: 80%;
   margin: auto;
-  background: #cd9900;
-  color: #fff2cd;
 }
 
-fieldset legend {
-  text-align: center;
-  font-weight: bolder;
-}
-
-fieldset div {
+fieldset.form-control,
+div.form-control {
   width: 80%;
   margin: auto;
-}
-
-fieldset div label,
-fieldset div input,
-fieldset div textarea {
-  margin: 0 0 2vw 0;
-  text-align: left;
-  width: 100%;
-  font: inherit;
-  height: 12vw;
-}
-
-fieldset div label {
+  background: #cd9900;
   color: #fff2cd;
   padding: 12px;
 }
 
 legend.form-control {
+  text-align: center;
   border-radius: 10px;
   border: 2px solid #0033cd;
+  font-weight: bolder;
   color: #0033cd;
   padding: 1vw;
   background: #fff2cd;
@@ -93,34 +79,18 @@ button.btn:hover {
 
 /* $primary: #226aa8; (phpmotors $primary) */
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   margin-right: auto;
   margin-left: auto;
 }
 
 .course-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
   margin: 1rem;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   border: 0.1rem solid rgba(0, 51, 205, 0.26);
 }
@@ -149,7 +119,7 @@ button.btn:hover {
 }
 .coursecard__container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   margin: 1rem;
   align-items: center;
   justify-content: space-between;
@@ -173,6 +143,13 @@ button.btn:hover {
   max-width: 50%;
   max-height: 100%;
 }
+.coursecard__title {
+  color: #fff2cd;
+  font-size: 5vw;
+}
+.coursecard__description {
+  font-size: 3vw;
+}
 .coursecard__content {
   flex-direction: column;
 }
@@ -185,17 +162,9 @@ button.btn:hover {
 }
 
 .grid-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 .grid-container a p {
@@ -467,6 +436,4 @@ div.form-control,
 fieldset.form-control {
     max-width: 50vw;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

@@ -5,36 +5,33 @@
   <%- include('../includes/navigation.ejs') %>
 
   <main>
-    <form method="POST" action="/instructor/courses/create">
-        <fieldset class="form-control">
-          <legend class="form-control">Add Course</legend>
-          <div>
-            <label for="image">Course Image URL</label><br>
-            <span class="accent">(Only .jpg, .png, .jpeg or .webp files are valid)</span>
-            <input id="image" type="text" name="image" placeholder="www.images.com/picturefilename.jpg">
-          </div>
-          <div>
-            <label for="title">Course Title</label>
-            <input id="title" type="text" name="title">
-          </div>
-          <div>
-            <label for="maxStudents">Max Students</label>
-            <input id="maxStudents" type="number" name="maxStudents">
-          </div>
-          <div>
-            <label for="description">Course Description</label>
-            <textarea id="description" name="description"></textarea>
-          </div>
-          <div>
-            <label for="content">Course Content</label>
-            <textarea id="content" name="content"></textarea>
-          </div>
-          <div>
-            <input type="hidden" name="instructorId" value="<%=user.id %>">
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <button class="btn" type="submit">Add Course</button>
-          </div>
-        </fieldset>
+      <h1>Add Course</h1>
+      <form method="POST" action="/instructor/courses/create">
+        <div class="form-control">
+          <label for="image">Course Image</label>
+          <input id="image" type="text" name="image">
+        </div>
+        <div class="form-control">
+          <label for="title">Course Title</label>
+          <input id="title" type="text" name="title">
+        </div>
+        <div class="form-control">
+          <label for="maxStudents">Max Students</label>
+          <input id="maxStudents" type="number" name="maxStudents">
+        </div>
+        <div class="form-control">
+          <label for="description">Course Description</label>
+          <textarea id="description" name="description"></textarea>
+        </div>
+        <div class="form-control">
+          <label for="content">Course Countent</label>
+          <textarea id="content" name="content"></textarea>
+        </div>
+        <div class="form-control">
+          <input type="hidden" name="instructorId" value="<%=user.id %>">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <button type="submit">Add Course</button>
+        </div>
       </form>
   </main>
 

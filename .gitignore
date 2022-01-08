@@ -1,16 +1,8 @@
 # ignore the node_modules
 node_modules
 
-# ignore environment variables
-nodemon.json
-mynodemon.json
+# ignore the env file
+.env
 
+# ignore scss mapping files
 *.css.map
-test.html
-test.css
-test.scss
-
-
-*.code-workspace*
-
-.gitignore
