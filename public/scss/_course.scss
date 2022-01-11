@@ -1,52 +1,11 @@
 @import "variables";
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   margin-right: auto;
   margin-left: auto;
-}
-
-.course-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  margin: 1rem;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  border: 0.1rem solid rgba(0, 51, 205, 0.26);
-
-  img {
-    min-height: auto;
-    max-height: 400px;
-  }
-
-  * {
-    margin-right: 1rem;
-  }
-}
-
-.button-signup {
-  background-color: $accent;
-  color: $primary;
-  border-radius: $radius;
-  border: $accent;
 }
 
 .coursecard {
@@ -90,7 +49,7 @@
     font-size: 3vw;
   }
   &__content {
-    flex-direction: column;
+      flex-direction: column;
   }
   &__item {
     flex-direction: column;
@@ -101,34 +60,37 @@
   }
 }
 
+
+
+.course-container * {
+  margin-right: 1rem;
+}
+
+.button-signup {
+  background-color: $accent;
+  color: $primary;
+  border-radius: $radius;
+  border: $accent;
+}
+
 .grid-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  a {
-    p {
-      color: $a180;
-      background-color: transparent;
-      text-decoration: none;
-    }
+.grid-container a p {
+  color: $a180;
+  background-color: transparent;
+  text-decoration: none;
+}
 
-    article {
-      margin: 1rem;
-    }
+.grid-container a article {
+  margin: 1rem;
+}
 
-    img {
-      min-height: auto;
-      max-height: 300px;
-    }
-  }
+.grid-container a img {
+  min-height: auto;
+  max-height: 300px;
 }

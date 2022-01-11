@@ -1,8 +1,11 @@
 @import "variables";
 
-a#reset,
-a#reset:hover,
-a#reset:visited {
+.form-control {
+  margin: auto;
+  color: $primary;
+}
+
+a#reset, a#reset:hover, a#reset:visited {
   color: $accent;
 }
 
@@ -11,75 +14,75 @@ fieldset {
   border: $borderlegend;
   width: 80%;
   margin: auto;
-}
-
-fieldset.form-control,
-div.form-control {
-  width: 80%;
-  margin: auto;
   background: $a180;
   color: $accent;
-  padding: 12px;
+  & legend {
+    text-align: center;
+    font-weight: bolder;
+  }
+  & div {
+    width: 80%;
+    margin: auto;
+    & 
+    label,
+    input,
+    textarea {
+        margin: 0 0 2vw 0;
+        text-align: left;
+        width: 100%;
+        font: inherit;
+        height: $heightmob;
+    }
+    & label {
+      color: $accent;
+    }
+  }
 }
 
 legend.form-control {
-  text-align: center;
-  border-radius: $radius;
-  border: $border;
-  font-weight: bolder;
-  color: $primary;
-  padding: 1vw;
-  background: $accent;
+    border-radius: $radius;
+    border: $border;
+    color: $primary;
+    padding: 1vw;
+    background: $accent;
 }
 
-.form-control {
-  margin: auto;
+
+.form-control label {
+    margin: 20px 0 0 0;
+}
+
+.form-control input,
+.form-control textarea {
+  background: $accent;
+  margin-bottom: 5vw;
+  border: $border;
+  border-radius: $radius;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  background: $inputfocus;
+  border: $borderfocus;
   color: $primary;
+}
 
-  label, input, textarea {
-    margin: 0 0 20px 0;
-    text-align: left;
-    width: 100%;
-    font: inherit;
-  }
-
-  // label {
-  //   margin: 20px 0 0 0;
-  // }
-
-  input,
-  textarea {
-    background: $accent;
-    margin-bottom: 5vw;
-    border: $border;
-    border-radius: $radius;
-  }
-
-  input:focus,
-  textarea:focus {
-    background: $inputfocus;
-    border: $borderfocus;
-    color: $primary;
-  }
-  // selects element with both things present -- input.invalid finds all with both things there
-  input.invalid,
-  textarea.invalid {
-    border-color: $a180;
-    background: lighten($a180, 30%);
-  }
+.form-control input.invalid,
+.form-control textarea.invalid {
+  border-color: $a180;
+  background: lighten($a180, 30%);
 }
 
 button.btn {
-  width: 100%;
-  background: $primary;
-  color: $accent;
-  border: $buttonborder;
-  border-radius: $radius;
-  box-shadow: $boxshadow;
+    width: 100%;
+    background: $primary;
+    color: $accent;
+    border: $buttonborder;
+    border-radius: $radius;
+    box-shadow: $boxshadow;
 }
 
-button.btn:active,
-button.btn:hover {
+button.btn:active, button.btn:hover {
   background: $accent;
   color: $primary;
   border: $border;
