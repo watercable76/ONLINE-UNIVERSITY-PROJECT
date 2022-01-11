@@ -8,10 +8,10 @@
     "start": "node app.js",
     "run": "nodemon app.js"
   },
-  "author": "Nicholas Cable, , , Doris Rush-Lopez",
+  "author": "Nicholas Cable",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.14"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.7",

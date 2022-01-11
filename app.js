@@ -22,7 +22,7 @@ const Login = require("./login");
 
 const MONGODB_URL =
   process.env.MONGODB_URL ||
-  `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_DB_URL}/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
+  `mongodb+srv://${Login.username}:${Login.pass}@cluster0.lwwzv.mongodb.net/teachingSite?retryWrites=true&w=majority`;
 
 const app = express();
 const store = new MongoDBStore({
@@ -41,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    secret: "my secret",
     resave: false,
     saveUninitialized: false,
     store: store,
@@ -52,7 +52,7 @@ app.use(flash());
 
 // adding features to support Heroku development
 const corsOptions = {
-  origin: "https://online-teaching-site.herokuapp.com/",
+  origin: "https://node-first-app-cse341.herokuapp.com/",
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));

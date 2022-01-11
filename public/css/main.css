@@ -1,5 +1,3 @@
-/* $primary: #226aa8; (phpmotors $primary) */
-/* $primary: #226aa8; (phpmotors $primary) */
 .form-control {
   margin: auto;
   color: #0033cd;
@@ -9,45 +7,38 @@ a#reset, a#reset:hover, a#reset:visited {
   color: #fff2cd;
 }
 
-fieldset {
+fieldset.form-control {
   border-radius: 20px;
   border: 10px solid #0033cd;
+  width: 80%;
+  margin: auto;
+}
+
+fieldset.form-control,
+div.form-control {
   width: 80%;
   margin: auto;
   background: #cd9900;
   color: #fff2cd;
 }
 
-fieldset legend {
-  text-align: center;
-  font-weight: bolder;
-}
-
-fieldset div {
-  width: 80%;
-  margin: auto;
-}
-
-fieldset div label,
-fieldset div input,
-fieldset div textarea {
-  margin: 0 0 2vw 0;
-  text-align: left;
-  width: 100%;
-  font: inherit;
-  height: 12vw;
-}
-
-fieldset div label {
-  color: #fff2cd;
-}
-
 legend.form-control {
+  text-align: center;
   border-radius: 10px;
   border: 2px solid #0033cd;
+  font-weight: bolder;
   color: #0033cd;
   padding: 1vw;
   background: #fff2cd;
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+  margin: 0 0 20px 0;
+  text-align: left;
+  width: 100%;
+  font: inherit;
 }
 
 .form-control label {
@@ -91,7 +82,6 @@ button.btn:active, button.btn:hover {
   border: 2px solid #0033cd;
 }
 
-/* $primary: #226aa8; (phpmotors $primary) */
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -121,8 +111,8 @@ button.btn:active, button.btn:hover {
 .coursecard__container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   margin: 1rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -135,11 +125,10 @@ button.btn:active, button.btn:hover {
   border: 3px solid #6600cd;
   border-radius: 10px;
   color: #fff2cd;
-  width: 80%;
 }
 
 .coursecard__container__image {
-  max-width: 100%;
+  max-width: 50%;
   height: 10rem;
   text-align: center;
   padding: 0;
@@ -151,15 +140,6 @@ button.btn:active, button.btn:hover {
   margin: 2vw;
   max-width: 50%;
   max-height: 100%;
-}
-
-.coursecard__title {
-  color: #fff2cd;
-  font-size: 5vw;
-}
-
-.coursecard__description {
-  font-size: 3vw;
 }
 
 .coursecard__content {

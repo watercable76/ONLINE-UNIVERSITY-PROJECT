@@ -1,5 +1,4 @@
 $primary: adjust-hue(lighten(#008080, 15%), 45deg);
-/* $primary: #226aa8; (phpmotors $primary) */
 $a45: adjust-hue($primary, 45deg);
 $a90: adjust-hue($primary, 90deg);
 $a135: adjust-hue($primary, 135deg);
@@ -32,8 +31,3 @@ $fontsizelg: max(3vw);
 $fontsizelgr: max(5vw);
 $height: 10vh;
 $shortline: max(1vw);
-
-
-$fa-var-upload: \f093;
-$fa-var-cloud-upload-alt: \f382;
-$fa-var-file-upload: \f574;

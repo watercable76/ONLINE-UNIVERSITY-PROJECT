@@ -17,7 +17,7 @@
   }
   &__container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     margin: 1rem;
     align-items: center;
     justify-content: space-between;
@@ -26,9 +26,8 @@
     border: $bordercard;
     border-radius: $radius;
     color: $accent;
-    width: 80%;
     &__image {
-      max-width: 100%;
+      max-width: 50%;
       height: 10rem;
       text-align: center;
       padding: 0;
@@ -40,13 +39,6 @@
       max-width: 50%;
       max-height: 100%;
     }
-  }
-  &__title {
-    color: $accent;
-    font-size: 5vw;
-  }
-  &__description {
-    font-size: 3vw;
   }
   &__content {
       flex-direction: column;

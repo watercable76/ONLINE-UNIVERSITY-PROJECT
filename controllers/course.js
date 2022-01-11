@@ -1,7 +1,7 @@
 const Course = require("../models/course");
 const InstructorRequest = require("../models/instructor-request");
 const User = require("../models/user");
-
+// TODO: implement database here
 const getCourses = async () => {
   return await Course.find();
 };
@@ -103,7 +103,7 @@ exports.getTeachWithUs = (req, res, next) => {
   });
 };
 
-
+// TODO: UPDATE ROLE BASED AUTH (+ add rights to admins)
 exports.postTeachWithUs = async (req, res, next) => {
   try {
     const newInstructorRequest = new InstructorRequest(req.body);

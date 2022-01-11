@@ -9,44 +9,39 @@ a#reset, a#reset:hover, a#reset:visited {
   color: $accent;
 }
 
-fieldset {
+fieldset.form-control {
   border-radius: $radiuslegend;
   border: $borderlegend;
   width: 80%;
   margin: auto;
-  background: $a180;
-  color: $accent;
-  & legend {
-    text-align: center;
-    font-weight: bolder;
-  }
-  & div {
+}
+
+fieldset.form-control,
+div.form-control {
     width: 80%;
     margin: auto;
-    & 
-    label,
-    input,
-    textarea {
-        margin: 0 0 2vw 0;
-        text-align: left;
-        width: 100%;
-        font: inherit;
-        height: $heightmob;
-    }
-    & label {
-      color: $accent;
-    }
-  }
+    background: $a180;
+    color: $accent;
 }
 
 legend.form-control {
+    text-align: center;
     border-radius: $radius;
     border: $border;
+    font-weight: bolder;
     color: $primary;
     padding: 1vw;
     background: $accent;
 }
 
+.form-control label,
+.form-control input,
+.form-control textarea {
+  margin: 0 0 20px 0 ;
+    text-align: left;
+    width: 100%;
+    font: inherit;
+}
 
 .form-control label {
     margin: 20px 0 0 0;
